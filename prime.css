@@ -77,6 +77,12 @@ body{
     border-bottom: 2px solid;
     border-right: 2px solid;
     border-left: 2px solid;
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#map{
+    padding-left: 100px;
 }
