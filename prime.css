@@ -95,6 +95,17 @@ body {
 
 }
 
+.boutons_inter{
+    background-color: rgb(215, 178, 84);
+    margin: 10px;
+    padding: 15px 45px;
+    color: black;
+    font: bold;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    border-radius: 20px;
+}
+
 .bouton_accueil:hover {
     background-position: right center;
     /* change the direction of the change here */
@@ -110,6 +121,33 @@ body {
     padding: 20px;
 }
 
+#conteneur_inter {
+
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: rgb(79, 132, 79);
+    width: 700px;
+    height: 300px;
+
+}
+
+#image_inter{
+    display: inline-block;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+#texte_inter{
+    display: inline-block;
+    margin-bottom :40px;
+}
+
+#relations_internationales{
+
+    border: 2px solid;
+    padding: 30px;
+    padding-left: 320px;
+}
 
 
 .padding_bouton {
