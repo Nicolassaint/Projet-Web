@@ -4,6 +4,23 @@
     <title>Omnes Scolaire</title>
     <meta charset="utf-8" />
     <link href="prime.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#section_choix_compte").hide();
+
+            $("#choix").click(function () {
+                $("#section_accueil").hide();
+                $("#section_choix_compte").show();
+            });
+            
+        });
+    
+
+    </script>
 </head>
 
 <body>
@@ -24,11 +41,19 @@
             <input type="button" value="Tout parcourir" class="bouton_accueil">
             <input type="button" value="Recherche" class="bouton_accueil">
             <input type="button" value="Rendez-vous" class="bouton_accueil">
-            <a href="choix_compte.html"><input type="button" value="Votre compte" class="bouton_accueil"></a>
+            <input type="button" value="Votre compte" class="bouton_accueil" id="choix">
 
         </div>
 
-        <div id="section">
+        <div id="section_choix_compte" class="section">
+
+            <a href="connexion.html"><input type="button" value="Client" class="bouton_accueil"></a>
+            <a href="connexion.html"><input type="button" value="Professeur ou Employé" class="bouton_accueil"></a>
+            <a href="connexion.html"><input type="button" value="Administrateur" class="bouton_accueil"></a>
+
+        </div>
+
+        <div id="section_accueil" class="section">
 
             <p>Le Prime Properties est prêt à commercialiser et à vendre votre propriété. </p>
             <p> La philosophie de Prime Properties est de promouvoir nos clients, pas nous-mêmes. </p>

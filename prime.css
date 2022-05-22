@@ -68,7 +68,7 @@ body {
 
 
 
-#section {
+.section {
     border: 2px solid;
     text-align: center;
     padding: 60px;
