@@ -71,7 +71,13 @@ body {
 .section {
     border: 2px solid;
     text-align: center;
-    padding: 60px;
+    padding: 20px;
+}
+
+
+
+.padding_bouton{
+    padding: 100px;
 }
 
 #footer {
@@ -83,6 +89,7 @@ body {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 #map {

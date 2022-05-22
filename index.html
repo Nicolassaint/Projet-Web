@@ -11,12 +11,33 @@
         $(document).ready(function () {
 
             $("#section_choix_compte").hide();
+            $("#section_tout_parcourir").hide();
+            $("#section_parcourir_recherche").hide();
 
             $("#choix").click(function () {
                 $("#section_accueil").hide();
+                $("#section_parcourir_recherche").hide();
+                $("#section_tout_parcourir").hide();
                 $("#section_choix_compte").show();
             });
-            
+
+            $("#tout_parcourir").click(function () {
+                $("#section_parcourir_recherche").hide();
+                $("#section_accueil").hide();
+                $("#section_choix_compte").hide();
+                $("#section_tout_parcourir").show();
+            });
+
+            $("#parcourir_recherche").click(function () {
+                $("#section_parcourir_recherche").show();
+                $("#section_accueil").hide();
+                $("#section_choix_compte").hide();
+                $("#section_tout_parcourir").hide();
+            });
+
+
+
+
         });
     
 
@@ -38,14 +59,14 @@
         <div id="navigation">
 
             <a href="index.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
-            <input type="button" value="Tout parcourir" class="bouton_accueil">
+            <input type="button" value="Tout parcourir" class="bouton_accueil" id="tout_parcourir">
             <input type="button" value="Recherche" class="bouton_accueil">
             <input type="button" value="Rendez-vous" class="bouton_accueil">
             <input type="button" value="Votre compte" class="bouton_accueil" id="choix">
 
         </div>
 
-        <div id="section_choix_compte" class="section">
+        <div id="section_choix_compte" class="section padding_bouton">
 
             <a href="connexion.html"><input type="button" value="Client" class="bouton_accueil"></a>
             <a href="connexion.html"><input type="button" value="Professeur ou Employé" class="bouton_accueil"></a>
@@ -53,13 +74,30 @@
 
         </div>
 
-        <div id="section_accueil" class="section">
+        <div id="section_tout_parcourir" class="section padding_bouton">
 
-            <p>Le Prime Properties est prêt à commercialiser et à vendre votre propriété. </p>
-            <p> La philosophie de Prime Properties est de promouvoir nos clients, pas nous-mêmes. </p>
-            <p> Nous pouvons également vous aider à trouver la propriété qui répond à vos besoins: </p>
+            <input type="button" value="L'Enseignement" class="bouton_accueil">
+            <input type="button" value="La Recherche" class="bouton_accueil" id="parcourir_recherche">
+            <input type="button" value="Relation Internationale" class="bouton_accueil">
 
         </div>
+
+        <div id="section_parcourir_recherche" class="section padding_bouton">
+
+            <input type="button" value="Systèmes intelligents communicants" class="bouton_accueil">
+            <input type="button" value="Mathématiques pour l’ingénierie" class="bouton_accueil">
+            <input type="button" value="Nanoscience et nanotechnologie pour l’ingénierie" class="bouton_accueil">
+
+        </div>
+
+        <div id="section_accueil" class="section">
+
+            <h1>Bienvenue sur le site de Omnes Education ! Les outils de l'excellence à portée de main.</h1>
+            <h3> Evenements de la semaine  </h3>
+            <h3>Bulletin scolaire de la semaine</h3>
+        </div>
+
+
 
 
 
