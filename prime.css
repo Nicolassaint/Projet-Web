@@ -59,6 +59,42 @@ body {
 
 }
 
+#barre_recherche {
+    margin: 10px;
+    padding: 15px 45px;
+    border-radius: 10px;
+    width: 230px;
+
+
+}
+
+#encadrement_recherche {
+
+    border-radius: 10px;
+    background-color: rgb(43, 42, 40);
+    width: 400px;
+
+}
+
+#slider {
+
+    float: right;
+    padding-top: 10px;
+    padding-right: 70px;
+}
+
+.bouton_recherche {
+    background-color: darkgoldenrod;
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+
+}
+
 .bouton_accueil:hover {
     background-position: right center;
     /* change the direction of the change here */
@@ -76,7 +112,7 @@ body {
 
 
 
-.padding_bouton{
+.padding_bouton {
     padding: 100px;
 }
 

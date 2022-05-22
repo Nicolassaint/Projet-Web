@@ -13,11 +13,15 @@
             $("#section_choix_compte").hide();
             $("#section_tout_parcourir").hide();
             $("#section_parcourir_recherche").hide();
+            $("#section_recherche").hide();
+
+
 
             $("#choix").click(function () {
                 $("#section_accueil").hide();
                 $("#section_parcourir_recherche").hide();
                 $("#section_tout_parcourir").hide();
+                $("#section_recherche").hide();
                 $("#section_choix_compte").show();
             });
 
@@ -25,12 +29,22 @@
                 $("#section_parcourir_recherche").hide();
                 $("#section_accueil").hide();
                 $("#section_choix_compte").hide();
+                $("#section_recherche").hide();
                 $("#section_tout_parcourir").show();
             });
 
             $("#parcourir_recherche").click(function () {
                 $("#section_parcourir_recherche").show();
                 $("#section_accueil").hide();
+                $("#section_recherche").hide();
+                $("#section_choix_compte").hide();
+                $("#section_tout_parcourir").hide();
+            });
+
+            $("#recherche").click(function () {
+                $("#section_parcourir_recherche").hide();
+                $("#section_accueil").hide();
+                $("#section_recherche").show();
                 $("#section_choix_compte").hide();
                 $("#section_tout_parcourir").hide();
             });
@@ -39,7 +53,7 @@
 
 
         });
-    
+
 
     </script>
 </head>
@@ -60,7 +74,7 @@
 
             <a href="index.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
             <input type="button" value="Tout parcourir" class="bouton_accueil" id="tout_parcourir">
-            <input type="button" value="Recherche" class="bouton_accueil">
+            <input type="button" value="Recherche" class="bouton_accueil" id="recherche">
             <input type="button" value="Rendez-vous" class="bouton_accueil">
             <input type="button" value="Votre compte" class="bouton_accueil" id="choix">
 
@@ -90,10 +104,21 @@
 
         </div>
 
+        <div id="section_recherche" class="section padding_bouton">
+
+            <div id="encadrement_recherche">
+                <input type="text" placeholder="Nom de spécialité ou établissement" id="barre_recherche">
+                <input type="submit" value="Rechercher" class="bouton_recherche">
+                <div id="slider"><img src="loupe.jpg" width="50" height="50" id="loupe"></div>
+
+            </div>
+
+        </div>
+
         <div id="section_accueil" class="section">
 
             <h1>Bienvenue sur le site de Omnes Education ! Les outils de l'excellence à portée de main.</h1>
-            <h3> Evenements de la semaine  </h3>
+            <h3> Evenements de la semaine </h3>
             <h3>Bulletin scolaire de la semaine</h3>
         </div>
 
@@ -105,7 +130,8 @@
         <!-- Here is the footer area -->
         <div id="footer">
 
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contactez-nous !</b><br><br>Mail : <a href="scolarite@omnes.fr">scolarite@omnes.fr</a><br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contactez-nous !</b><br><br>Mail : <a
+                    href="scolarite@omnes.fr">scolarite@omnes.fr</a><br>
                 Tél : <a href="01 30 62 78 62">01 30 62 78 62</a></p>
 
 
