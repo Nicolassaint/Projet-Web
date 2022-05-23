@@ -15,18 +15,19 @@
             <i class="fas fa-user"></i>
         </div>
 
+
         <div class="tab-body" data-id="connexion">
-            <form>
+            <form action="connexion.php" method="post">
                 <div class="row">
                     <i class="far fa-user"></i>
-                    <input type="email" class="input" placeholder="Adresse Mail">
+                    <input type="email" class="input" placeholder="Adresse Mail" name="login">
                 </div>
                 <div class="row">
                     <i class="fas fa-lock"></i>
-                    <input placeholder="Mot de Passe" type="password" class="input">
+                    <input placeholder="Mot de Passe" type="password" class="input" name="password">
                 </div>
                 <a href="#" class="link">Mot de passe oublié ?</a>
-                <button class="btn" type="button">Connexion</button>
+                <button class="btn" type="submit">Connexion</button>
             </form>
         </div>
 

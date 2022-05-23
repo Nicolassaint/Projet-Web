@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <head>
@@ -98,7 +99,7 @@
 
         <div id="navigation">
 
-            <a href="index.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
+            <a href="index.php"><input type="button" value="Accueil" class="bouton_accueil"></a>
             <input type="button" value="Tout parcourir" class="bouton_accueil" id="tout_parcourir">
             <input type="button" value="Recherche" class="bouton_accueil" id="recherche">
             <input type="button" value="Rendez-vous" class="bouton_accueil">
@@ -106,13 +107,17 @@
 
         </div>
 
+        <form action="type_utilisateur.php" method="post">
+
         <div id="section_choix_compte" class="section padding_bouton">
 
-            <a href="connexion.html"><input type="button" value="Client" class="bouton_accueil"></a>
-            <a href="connexion.html"><input type="button" value="Professeur ou Employé" class="bouton_accueil"></a>
-            <a href="connexion.html"><input type="button" value="Administrateur" class="bouton_accueil"></a>
+            <a href="connexion.html"><input type="submit" value="Client" class="bouton_accueil" name="boutton_client"></a>
+            <a href="connexion.html"><input type="submit" value="Professeur ou Employé" class="bouton_accueil" name="bouton_prof"></a>
+            <a href="connexion.html"><input type="submit" value="Administrateur" class="bouton_accueil" name="bouton_admin"></a>
 
         </div>
+
+        </form>
 
         <div id="section_tout_parcourir" class="section padding_bouton">
 
