@@ -17,11 +17,13 @@
             //Tentative de récuperer la variable session afin de supprimer l'onglet inscription pour les profs et admins.
             var utilisateur = '<?php echo $_SESSION["type_utilisateur"]; ?>';
             
-            console.log(utilisateur);
+            //console.log(utilisateur);
 
             if((utilisateur == "prof")||(utilisateur == "admin"))
             {
                 $("#inscription").hide();
+                $("#connexion").hide();
+
             }
         });
 
@@ -75,7 +77,7 @@
         </div>
 
         <div class="tab-footer">
-            <a class="tab-link active" data-ref="connexion" href="javascript:void(0)">Connexion</a>
+            <a class="tab-link active" data-ref="connexion" href="javascript:void(0)" id="connexion">Connexion</a>
             <a class="tab-link" data-ref="inscription" href="javascript:void(0)" id="inscription">Inscription</a>
         </div>
     </div>
