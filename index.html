@@ -16,6 +16,7 @@
             $("#section_recherche").hide();
             $("#relations_internationales").hide();
             $("#section_services").hide();
+            $("#section_enseignement").hide();
 
             $("#choix").click(function () {
                 $("#section_accueil").hide();
@@ -25,6 +26,7 @@
                 $("#relations_internationales").hide();
                 $("#section_services").hide();
                 $("#section_choix_compte").show();
+                $("#section_enseignement").hide();
             });
 
             $("#tout_parcourir").click(function () {
@@ -35,6 +37,7 @@
                 $("#relations_internationales").hide();
                 $("#section_services").hide();
                 $("#section_tout_parcourir").show();
+                $("#section_enseignement").hide();
             });
 
             $("#parcourir_recherche").click(function () {
@@ -45,6 +48,7 @@
                 $("#section_tout_parcourir").hide();
                 $("#section_services").hide();
                 $("#relations_internationales").hide();
+                $("#section_enseignement").hide();
             });
 
             $("#recherche").click(function () {
@@ -55,6 +59,7 @@
                 $("#section_tout_parcourir").hide();
                 $("#section_services").hide();
                 $("#relations_internationales").hide();
+                $("#section_enseignement").hide();
             });
 
             $("#services").click(function () {
@@ -65,6 +70,7 @@
                 $("#section_tout_parcourir").hide();
                 $("#section_services").hide();
                 $("#relations_internationales").show();
+                $("#section_enseignement").hide();
             });
 
             $("#nosservices").click(function () {
@@ -75,8 +81,19 @@
                 $("#section_tout_parcourir").hide();
                 $("#section_services").show();
                 $("#relations_internationales").hide();
+                $("#section_enseignement").hide();
             });
 
+            $("#enseignement").click(function () {
+                $("#section_parcourir_recherche").hide();
+                $("#section_accueil").hide();
+                $("#section_recherche").hide();
+                $("#section_choix_compte").hide();
+                $("#section_tout_parcourir").hide();
+                $("#section_services").hide();
+                $("#relations_internationales").hide();
+                $("#section_enseignement").show();
+            });
 
         });
 
@@ -116,7 +133,7 @@
 
         <div id="section_tout_parcourir" class="section padding_bouton">
 
-            <input type="button" value="L'Enseignement" class="bouton_accueil">
+            <input type="button" value="L'Enseignement" class="bouton_accueil" id="enseignement">
             <input type="button" value="La Recherche" class="bouton_accueil" id="parcourir_recherche">
             <input type="button" value="Relation Internationale" class="bouton_accueil" id="services">
 
@@ -140,8 +157,13 @@
             </div>
 
         </div>
-
-        
+<form>
+        <div id="section_enseignement" class="section padding_button">
+            <input type="submit" value="Informatique" class="bouton_accueil" formaction="prof_info.php">
+            <input type="button" value="Mathématiques" class="bouton_accueil" formction="prof_maths.php">
+            <input type="button" value="Physique" class="bouton_accueil" formation="prof_physique">
+        </div>
+</form>
         <div id="relations_internationales">
 
             <div id="conteneur_inter">
@@ -178,6 +200,8 @@
             <h3> Evenements de la semaine </h3>
             <h3>Bulletin scolaire de la semaine</h3>
         </div>
+
+
 
 
 
