@@ -32,22 +32,9 @@ if ($db_found) {
 
     }
 
-    else if ($utilisateur == "prof")
-    {
-      
-        echo "On ne peut pas créer un prof manuellement, demandez a un admin !";
-
-    }
-
-    else if ($utilisateur == "admin")
-    {
-      
-        echo "On ne peut pas créer un admin manuellement !";
-
-    }
 
     else{                
-         echo "Problème d'inscription !";
+         echo "Problème d'inscription client !";
     }
  
 }

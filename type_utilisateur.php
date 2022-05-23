@@ -19,7 +19,7 @@ if (isset($_POST['bouton_admin'])) {
 
  $_SESSION["type_utilisateur"]=$utilisateur;
 
- header('Location: connexion.html');
+ header('Location: compte.php');
  exit();
 
 

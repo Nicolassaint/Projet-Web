@@ -19,7 +19,7 @@
             
             console.log(utilisateur);
 
-            if(utilisateur != "client")
+            if((utilisateur == "prof")||(utilisateur == "admin"))
             {
                 $("#inscription").hide();
             }
@@ -70,13 +70,13 @@
                     <input type="text" class="input" placeholder="Prenom" name="prenom">
                 </div>
                 
-                <button class="btn" type="submit" id="inscription">Inscription</button>
+                <button class="btn" type="submit">Inscription</button>
             </form>
         </div>
 
         <div class="tab-footer">
             <a class="tab-link active" data-ref="connexion" href="javascript:void(0)">Connexion</a>
-            <a class="tab-link" data-ref="inscription" href="javascript:void(0)">Inscription</a>
+            <a class="tab-link" data-ref="inscription" href="javascript:void(0)" id="inscription">Inscription</a>
         </div>
     </div>
 </body>
