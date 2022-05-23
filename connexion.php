@@ -28,11 +28,14 @@ if ($db_found) {
 
         while ($data = mysqli_fetch_assoc($result)) {
 
-            if(($date["login"] == $login) && ($date["mdp"] == $password))
+            if(($data["login"] == $login) && ($data["mdp"] == $password))
             {
                 echo "Connexion client reussie.";
 
             }
+            else{                
+                echo "Connexion échouée, le login ou mot de passe est incorrect !";
+           }
         }
 
     }
@@ -46,11 +49,14 @@ if ($db_found) {
 
         while ($data = mysqli_fetch_assoc($result)) {
 
-            if(($date["mail"] == $login) && ($date["mdp"] == $password))
+            if(($data["mail"] == $login) && ($data["mdp"] == $password))
             {
                 echo "Connexion prof reussie.";
 
             }
+            else{                
+                echo "Connexion échouée, le login ou mot de passe est incorrect !";
+           }
         }
 
     }
@@ -64,18 +70,19 @@ if ($db_found) {
 
         while ($data = mysqli_fetch_assoc($result)) {
 
-            if(($date["login"] == $login) && ($date["mdp"] == $password))
+            if(($data["login"] == $login) && ($data["mdp"] == $password))
             {
                 echo "Connexion admin reussie.";
 
             }
+            else{                
+                echo "Connexion échouée, le login ou mot de passe est incorrect !";
+           }
         }
 
     }
 
-    else{                
-         echo "Connexion échouée, le login ou mot de passe est incorrect !";
-    }
+    
  
 }
 

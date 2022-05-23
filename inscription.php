@@ -26,7 +26,7 @@ if ($db_found) {
     if ($utilisateur == "client")
     {
       
-        $sql = "INSERT into etudiant values($nom,$prenom,$login,$password)";
+        $sql = "INSERT into etudiant values('$nom','$prenom','$login','$password')";
         $result = mysqli_query($db_handle, $sql);
         echo "Ajout client reussi, valeurs : ".$nom."  ".$prenom."   ".$login."   ".$password;
 
