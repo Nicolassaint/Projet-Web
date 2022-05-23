@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $login = isset($_POST["login"])? $_POST["login"] : "";
 $password = isset($_POST["password"])? $_POST["password"] : "";
 
@@ -11,6 +13,7 @@ $database = "projetweb";
 $db_handle = mysqli_connect('localhost', 'root', '' );
 $db_found = mysqli_select_db($db_handle, $database);
 
+$utilisateur = "";
 $utilisateur = $_SESSION["type_utilisateur"];
 
  //si le BDD existe, faire le traitement

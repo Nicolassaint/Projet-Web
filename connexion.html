@@ -32,20 +32,25 @@
         </div>
 
         <div class="tab-body" data-id="inscription">
-            <form>
+            <form action="inscription.php" method="post">
                 <div class="row">
                     <i class="far fa-user"></i>
-                    <input type="email" class="input" placeholder="Adresse Mail">
+                    <input type="email" class="input" placeholder="Adresse Mail" name="login">
                 </div>
                 <div class="row">
                     <i class="fas fa-lock"></i>
-                    <input type="password" class="input" placeholder="Mot de Passe">
+                    <input type="password" class="input" placeholder="Mot de Passe" name="password">
                 </div>
                 <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" class="input" placeholder="Confirmer Mot de Passe">
+                    <i class="far fa-user"></i>
+                    <input type="text" class="input" placeholder="Nom" name="nom">
                 </div>
-                <button class="btn" type="button">Inscription</button>
+                <div class="row">
+                    <i class="far fa-user"></i>
+                    <input type="text" class="input" placeholder="Prenom" name="prenom">
+                </div>
+                
+                <button class="btn" type="submit">Inscription</button>
             </form>
         </div>
 
