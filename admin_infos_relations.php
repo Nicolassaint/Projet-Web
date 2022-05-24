@@ -15,12 +15,17 @@ $db_found = mysqli_select_db($db_handle, $database);
  //si le BDD existe, faire le traitement
 if ($db_found) {
       
-        $sql = "UPDATE infos_relations_inter SET salle = '$salle', tel = '$telephone', mail = '$mail'";
+        $sql = "UPDATE infos_relations_inter SET salle = '$salle', tel = '$telephone', email = '$mail'";
         $result = mysqli_query($db_handle, $sql);
-        echo "Modification réalisée avec succès <br><br>";
-        echo "salle : ".$salle;
+        echo "<div style='text-align:center;'>";
+        echo "<br><b>Modification réalisée avec succès </b><br><br>";
+
+        echo $sql;
+        echo "<br><br>salle : ".$salle;
         echo "<br>telephone : ".$telephone;
         echo "<br>mail : ".$mail;
+        echo "</div>";
+
          
 }
 
