@@ -72,7 +72,9 @@ if ($db_found) {
 
             if(($data["login"] == $login) && ($data["mdp"] == $password))
             {
-                echo "Connexion admin reussie.";
+                $_SESSION["adresse_admin"] = $login;
+                header('Location: admin.html');
+                exit();
 
             }
             else{                

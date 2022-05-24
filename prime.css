@@ -1,5 +1,7 @@
 body {
-    background-color: rgba(94, 166, 208, 0.442);
+    background-color: rgba(159, 158, 183, 0.442);
+
+
 }
 
 
@@ -43,10 +45,21 @@ body {
 
 }
 
+#navigation_admin {
+
+
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
 
 
 .bouton_accueil {
-    background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+    background-image: linear-gradient(to right, #000C7B 0%, #6F71A3 51%, #7E84F7 100%);
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
@@ -114,7 +127,16 @@ body {
 }
 
 
+.admin{
 
+    border-bottom: 2px solid ;
+    border-right: 2px solid;
+    border-left: 2px solid;
+    text-align: center;
+    padding: 100px;
+    padding-left: 500px;
+
+}
 .section {
     border: 2px solid;
     text-align: center;
