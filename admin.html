@@ -12,18 +12,27 @@
 
             $("#supression_admin").hide();
             $("#ajout_admin").hide();
+            $("#admin_infos_relations").hide();
+
 
 
             $("#suppression").click(function () {
                 $("#supression_admin").show();
                 $("#ajout_admin").hide();
+                $("#admin_infos_relations").hide();
 
             });
 
             $("#ajout").click(function () {
                 $("#supression_admin").hide();
                 $("#ajout_admin").show();
+                $("#admin_infos_relations").hide();
+            });
 
+            $("#infos_inter").click(function () {
+                $("#supression_admin").hide();
+                $("#ajout_admin").hide();
+                $("#admin_infos_relations").show();
             });
 
         });
@@ -52,11 +61,12 @@
             <input type="button" value="Exportation CV" class="bouton_accueil" id="exporationCV">
             <input type="button" value="Relations Internationales" class="bouton_accueil" id="infos_inter">
             <input type="button" value="Disponibilités personnel" class="bouton_accueil" id="dispo_personnel">
-            <input type="button" value="Votre compte" class="bouton_accueil" id="votre_compte">
-
+            <form action="admin_infos.php" method="GET">
+                <input type="submit" value="Votre compte" class="bouton_accueil" id="votre_compte">
+            </form>
         </div>
 
-        <form action="admin_supression.php" method="post">
+        <form action="admin_suppression.php" method="post">
 
             <div id="supression_admin" class="admin">
 
@@ -64,6 +74,23 @@
                     <input type="text" placeholder="Email de l'employé" id="barre_recherche" name="mail">
                     <input type="submit" value="Supprimer" class="bouton_recherche">
                     <div id="slider"><img src="loupe.jpg" width="50" height="50" id="loupe"></div>
+
+                </div>
+
+            </div>
+        </form>
+
+        <form action="admin_infos_relations.php" method="post">
+
+            <div id="admin_infos_relations.php" class="admin">
+
+                <div id="encadrement_recherche">
+                    <br><h2 style="color: white;">Bureau Relation Internationale</h2>
+                    <input type="text" placeholder="Salle" id="barre_recherche" name="salle">
+                    <input type="text" placeholder="Téléphone" id="barre_recherche" name="telephone">
+                    <input type="email" placeholder="E-mail" id="barre_recherche" name="mail">
+
+                    <input type="submit" value="Modifier" class="bouton_recherche">
 
                 </div>
 
@@ -95,7 +122,6 @@
 
             </div>
         </form>
-
 
 
 
