@@ -1,3 +1,23 @@
+<?php
+$duration=30;
+$cleanup=0;
+$start="09:00";
+$end="15:00";
+
+function timslots($duration, $cleanup, $start, $end)
+{
+    $start= new DateTime($start);
+    $end= new DateTime($end);
+    $interval = new DateInterval("PT".$duration."M");
+    $cleanupinterval = new DateInterval("PT".$cleanup."M");
+    $slots=array();
+
+   // for($)
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
