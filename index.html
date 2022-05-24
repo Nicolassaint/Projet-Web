@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
 
 <head>
-    <title>Omnes Scolaire</title>
+    <title>OMNES SCOLAIRE</title>
     <meta charset="utf-8" />
     <link href="prime.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
 
-    <script>
+            $(document).ready(function () {
 
-        $(document).ready(function () {
-
-            $("#section_choix_compte").hide();
+                $("#section_choix_compte").hide();
             $("#section_tout_parcourir").hide();
             $("#section_parcourir_recherche").hide();
             $("#section_recherche").hide();
@@ -21,85 +19,138 @@
 
             $("#choix").click(function () {
                 $("#section_accueil").hide();
-                $("#section_parcourir_recherche").hide();
-                $("#section_tout_parcourir").hide();
-                $("#section_recherche").hide();
-                $("#relations_internationales").hide();
-                $("#section_services").hide();
-                $("#section_choix_compte").show();
-                $("#section_enseignement").hide();
+            $("#section_parcourir_recherche").hide();
+            $("#section_tout_parcourir").hide();
+            $("#section_recherche").hide();
+            $("#relations_internationales").hide();
+            $("#section_services").hide();
+            $("#section_choix_compte").show();
+            $("#section_enseignement").hide();
             });
 
             $("#tout_parcourir").click(function () {
                 $("#section_parcourir_recherche").hide();
-                $("#section_accueil").hide();
-                $("#section_choix_compte").hide();
-                $("#section_recherche").hide();
-                $("#relations_internationales").hide();
-                $("#section_services").hide();
-                $("#section_tout_parcourir").show();
-                $("#section_enseignement").hide();
+            $("#section_accueil").hide();
+            $("#section_choix_compte").hide();
+            $("#section_recherche").hide();
+            $("#relations_internationales").hide();
+            $("#section_services").hide();
+            $("#section_tout_parcourir").show();
+            $("#section_enseignement").hide();
             });
 
             $("#parcourir_recherche").click(function () {
                 $("#section_parcourir_recherche").show();
-                $("#section_accueil").hide();
-                $("#section_recherche").hide();
-                $("#section_choix_compte").hide();
-                $("#section_tout_parcourir").hide();
-                $("#section_services").hide();
-                $("#relations_internationales").hide();
-                $("#section_enseignement").hide();
+            $("#section_accueil").hide();
+            $("#section_recherche").hide();
+            $("#section_choix_compte").hide();
+            $("#section_tout_parcourir").hide();
+            $("#section_services").hide();
+            $("#relations_internationales").hide();
+            $("#section_enseignement").hide();
             });
 
             $("#recherche").click(function () {
                 $("#section_parcourir_recherche").hide();
-                $("#section_accueil").hide();
-                $("#section_recherche").show();
-                $("#section_choix_compte").hide();
-                $("#section_tout_parcourir").hide();
-                $("#section_services").hide();
-                $("#relations_internationales").hide();
-                $("#section_enseignement").hide();
+            $("#section_accueil").hide();
+            $("#section_recherche").show();
+            $("#section_choix_compte").hide();
+            $("#section_tout_parcourir").hide();
+            $("#section_services").hide();
+            $("#relations_internationales").hide();
+            $("#section_enseignement").hide();
             });
 
             $("#services").click(function () {
                 $("#section_parcourir_recherche").hide();
-                $("#section_accueil").hide();
-                $("#section_recherche").hide();
-                $("#section_choix_compte").hide();
-                $("#section_tout_parcourir").hide();
-                $("#section_services").hide();
-                $("#relations_internationales").show();
-                $("#section_enseignement").hide();
+            $("#section_accueil").hide();
+            $("#section_recherche").hide();
+            $("#section_choix_compte").hide();
+            $("#section_tout_parcourir").hide();
+            $("#section_services").hide();
+            $("#relations_internationales").show();
+            $("#section_enseignement").hide();
             });
 
             $("#nosservices").click(function () {
                 $("#section_parcourir_recherche").hide();
-                $("#section_accueil").hide();
-                $("#section_recherche").hide();
-                $("#section_choix_compte").hide();
-                $("#section_tout_parcourir").hide();
-                $("#section_services").show();
-                $("#relations_internationales").hide();
-                $("#section_enseignement").hide();
+            $("#section_accueil").hide();
+            $("#section_recherche").hide();
+            $("#section_choix_compte").hide();
+            $("#section_tout_parcourir").hide();
+            $("#section_services").show();
+            $("#relations_internationales").hide();
+            $("#section_enseignement").hide();
             });
 
             $("#enseignement").click(function () {
                 $("#section_parcourir_recherche").hide();
-                $("#section_accueil").hide();
-                $("#section_recherche").hide();
-                $("#section_choix_compte").hide();
-                $("#section_tout_parcourir").hide();
-                $("#section_services").hide();
-                $("#relations_internationales").hide();
-                $("#section_enseignement").show();
+            $("#section_accueil").hide();
+            $("#section_recherche").hide();
+            $("#section_choix_compte").hide();
+            $("#section_tout_parcourir").hide();
+            $("#section_services").hide();
+            $("#relations_internationales").hide();
+            $("#section_enseignement").show();
             });
 
-        });
+            var $img = $('#carrousel img');
+            var max = $img.length;
+            var i = 0; // compteur
+            $img.css('margin-left','0').css('display', 'none'); //on cache les images
+            $img.eq(i).css('display', 'inline'); //on affiche l'image courante
+            
+
+            //si on clique sur « next » ou « > »
+            $('.next').click(function () { // image suivante
+                i += 1; // on incrémente le compteur
+            if (i<4)
+            {
+            $img.css('margin-left','0').css('display', 'none'); //on cache
+            $img.eq(i).css('display', 'inline'); //on affiche l'image courante
+            
+            }
+            else{
+                i=3;
+            }
+            
+            
+ });
+//si on clique sur « prev » ou « < »
+            $('.prev').click(function () { // groupe des images précédentes
+                i -= 1; // on décrémente le compteur
+            if (i >= 0) {
+            $img.css('margin-left', '0').css('display', 'none'); //on cache
+            $img.eq(i).css('display', 'inline'); //on affiche l'image courante
+            
+            }
+            else {
+                i = 0;
+            }
+ });
+            function slideImg() {
+                setTimeout(function () {
+                    $img.eq(i).css('display', 'inline').css('transition-delay', '0.25s');
+                   
+                    if (i <  4) {
+                        i = i + 1;
+                    } else {
+                        i = 0;
+                    }
+                    $img.css('margin-left', '0').css('display', 'none');
+                    $img.eq(i).css('display', 'inline').css('transition-delay', '1.25s');
+                   
+                    slideImg();
+                }, 4000);
+}
+            slideImg();
+});
 
 
-    </script>
+
+
+
+ </script>
 </head>
 
 <body>
@@ -108,7 +159,7 @@
 
         <div id="header">
 
-            <h1 id="titre">Omnes Scolaire</h1>
+            <h1 id="titre">OMNES SCOLAIRE</h1>
             <img src="omnes_logo.webp" id="droite" alt="omnes_logo" width="300" height="100">
 
         </div>
@@ -126,13 +177,13 @@
 
         <form action="type_utilisateur.php" method="post">
 
-        <div id="section_choix_compte" class="section padding_bouton">
+            <div id="section_choix_compte" class="section padding_bouton">
 
-            <input type="submit" value="Client" class="bouton_accueil" name="bouton_client">
-            <input type="submit" value="Professeur ou Employé" class="bouton_accueil" name="bouton_prof">
-            <input type="submit" value="Administrateur" class="bouton_accueil" name="bouton_admin">
+                <input type="submit" value="Client" class="bouton_accueil" name="bouton_client">
+                <input type="submit" value="Professeur ou Employé" class="bouton_accueil" name="bouton_prof">
+                <input type="submit" value="Administrateur" class="bouton_accueil" name="bouton_admin">
 
-        </div>
+            </div>
 
         </form>
 
@@ -162,32 +213,34 @@
             </div>
 
         </div>
-<form>
-        <div id="section_enseignement" class="section padding_button">
-            <input type="submit" value="Informatique" class="bouton_accueil" formaction="prof_info.php">
-            <input type="button" value="Mathématiques" class="bouton_accueil" formction="prof_maths.php">
-            <input type="button" value="Physique" class="bouton_accueil" formation="prof_physique">
-        </div>
-</form>
+        <form>
+            <div id="section_enseignement" class="section padding_button">
+                <input type="submit" value="Informatique" class="bouton_accueil" formaction="prof_info.php">
+                <input type="button" value="Mathématiques" class="bouton_accueil" formction="prof_maths.php">
+                <input type="button" value="Physique" class="bouton_accueil" formation="prof_physique">
+            </div>
+        </form>
         <div id="relations_internationales">
 
             <div id="conteneur_inter">
-            <div id="image_inter">
-                <img src="relations_internationales.png" width="300" height="200">
+                <div id="image_inter">
+                    <img src="relations_internationales.png" width="300" height="200">
+                </div>
+
+                <div id="texte_inter">
+                    <p>
+                        <b>
+                            <h2>Relation Internationale</h2>
+                            Salle : P-425 <br><br>
+                            Téléphone : +33 01 12 13 14 15 <br><br>
+                            Email : relation-internationales@omnes-intl.fr<br>
+                        </b>
+                    </p>
+
+                    <input type="button" value="Nos services" id="nosservices" class="boutons_inter">
+
+                </div>
             </div>
-
-            <div id="texte_inter">
-                <p>
-                    <b><h2>Relation Internationale</h2>
-                    Salle : P-425 <br><br>
-                    Téléphone : +33 01 12 13 14 15 <br><br>
-                    Email : relation-internationales@omnes-intl.fr<br></b>
-                </p>
-
-                <input type="button" value="Nos services" id="nosservices" class="boutons_inter">
-
-            </div>
-           </div>
         </div>
 
         <div id="section_services" class="section padding_bouton">
@@ -201,14 +254,75 @@
 
         <div id="section_accueil" class="section">
 
+            <div>
             <h1>Bienvenue sur le site de Omnes Education ! Les outils de l'excellence à portée de main.</h1>
-            <p>Leader de l’enseignement supérieur privé, OMNES Education est le seul Groupe à offrir une gamme qui s’étend aux principaux domaines de 
-                l’Enseignement Supérieur et de la Recherche : Management, Ingénierie, Sciences politiques et relations internationales, 
+            <p>Leader de l’enseignement supérieur privé, OMNES Education est le seul Groupe à offrir une gamme qui
+                s’étend aux principaux domaines de
+                l’Enseignement Supérieur et de la Recherche : Management, Ingénierie, Sciences politiques et relations
+                internationales,
                 Communication et publicité.</p>
             <h2>Des campus au coeur des villes</h2>
-            <p>Nos écoles sont idéalement situées au cœur des villes, à Paris, Lyon, Bordeaux, Beaune, Chambéry et à l’étranger, dans des locaux équipés des dernières technologies, pour un cadre d’études agréable et fonctionnel conçu pour l’apprentissage. Nos campus sont dimensionnés pour accueillir plusieurs écoles du groupe, de façon à favoriser les échanges. Nos étudiants ont ainsi l’opportunité d’expérimenter d’autres domaines de connaissances que celui de leur école et de travailler ensemble sur des projets pluridisciplinaires au contact de profils différents.</p>
+            <p>Nos écoles sont idéalement situées au cœur des villes, à Paris, Lyon, Bordeaux, Beaune, Chambéry et à
+                l’étranger, dans des locaux équipés des dernières technologies, pour un cadre d’études agréable et
+                fonctionnel conçu pour l’apprentissage. Nos campus sont dimensionnés pour accueillir plusieurs écoles du
+                groupe, de façon à favoriser les échanges. Nos étudiants ont ainsi l’opportunité d’expérimenter d’autres
+                domaines de connaissances que celui de leur école et de travailler ensemble sur des projets
+                pluridisciplinaires au contact de profils différents.</p>
             <img src="Acceuil.png" alt="omes_info" width="1000" height="600">
-            <h3> Evenements de la semaine </h3>
+        </div>
+            <div>
+            <h3> Evènements de la semaine </h3>
+            <img src="Apprentissage.png" alt="apprentissage" width="500" height="300"> <br>
+            <h><em>Le Forum apprentissage de l'ECE</em></h>
+            <p>L’apprentissage c’est le fait d’être étudiant ET salarié. C’est la possibilité de suivre ses études en 
+                programme Ingénieurs ou en programme Bachelor tout en ayant une expérience professionnelle significative sur le CV. Mais c’est aussi avoir un salaire à la fin du mois, 
+                des frais de scolarité payés par l’entreprise et l’assurance de se constituer un réseau solide</p>
+            <img src="JPO.jpg" alt="jpo" width="500" height="500"> <br>
+            <h><em>Ouverture du Campus !</em> </h>
+            <p>Les campus de Paris, Lyon et Bordeaux organisent leur 1er « Campus DAY » ! Une autre façon de découvrir ECE. Ecole d'ingénieurs. Engineering School. en ce début de période estivale ! 
+
+                RDV dans l’un de nos 3 campus, samedi 4 juin 2022 de :
+                <l> 14h à 18h Campus de Paris /  14h à 17h Campus de Lyon / 9h30 à 12h30 Campus de Bordeaux 
+                </l>
+            </p>
+            <img src="SDI.jpg" alt="jpo" width="600" height="400"> <br>
+            <h><em>Le nouveau SDI enfin dévoilé !</em> </h>
+            <p>La vie associative de l’ECE offre des opportunités plus enrichissantes les unes que les autres. S’évader, s’exprimer, se trouver sont les maitres mots de chaque activité proposée, et dont chacune représente une expérience unique à elle seule.
+                Le Séminaire D’Intégration est une association qui s’occupe, comme son nom l’indique, de l’intégration des nouveaux élèves de l’ECE. Cette étape essentielle pour les nouveaux élèves prend la forme de deux séjours de 3 jours et deux nuits, organisé par l’association, composée d’étudiants de 4ème année. Mais l’intégration s’étend également tout au long de l’année, notamment à l’arrivée des prépac (étudiants qui se sont réorientés en milieu d’année) et des STI2D (venus faire leur second semestre à l’ECE).</p>
+                
+            <p>Le séminaire d’intégration est l’un des principaux évènements de l’année. Il accueille près de 1200 nouveaux étudiants : des bacheliers, des élèves post-classe préparatoire, des bachelors et des Masters. Ce séjour leur permet de recevoir un accueil chaleureux et d’entrer de plein pied dans la vie étudiante. C’est la première impression qu’ils auront de l’école, et qu’ils garderont tout au long de leur vie.</p>
+            <p> Rendez-vous le 12 juin pour les rencontrer ! </p>
+
+            </div>
+               
+            
+
+            <div id = wrapperCarroussel>
+                <br><h3>Nos enseignants et chercheurs !</h3> 
+                
+                <div id="carrousel">
+                <ul>
+                La mission du centre de recherche est de favoriser l’émergence d’une communauté scientifique interdisciplinaire. 
+                En 2018, le centre de recherche a lancé une organisation interdisciplinaire autour d’un nouvel axe fédérateur nommé PI-ECE 
+                (Programme Interdisciplinaire de l’ECE) centré sur les capteurs intelligents de la smart-city <br><br>
+                <li><img src="car4.png" width="600" height="380"></li>
+                <li><img src="car2.png" width="600" height="380"></li>
+                <li><img src="car3.png" width="600" height="380"></li>
+                <li><img src="car1.jpg" width="600" height="200"></li>
+                </ul>
+
+                <div id="audio">
+                <audio controls autoplay loop>
+                 <source src="musique.mp3" type="audio/ogg">
+                </audio>
+                </div>
+
+                </div>
+                <div id = buttons>
+                <input type="button" value="<" class="prev">
+                <input type="button" value=">" class="next">
+                </div>
+            </div>
         </div>
 
 

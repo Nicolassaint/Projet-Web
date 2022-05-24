@@ -191,3 +191,80 @@ body {
 #map {
     padding-left: 100px;
 }
+
+#wrapperCarroussel {
+    width: 800px;
+    height: 700px;
+    position: relative;
+    margin: auto;
+    
+    border-radius: 0px;
+    }
+    
+#titreCarroussel{
+    position: absolute;
+    width: 750px;
+    text-align: center;
+    color: black
+}
+#carrousel {
+position: absolute;
+width: 750px;
+height: px;
+list-style: none;
+left: 0;
+margin-bottom: 0;
+
+}
+
+#carrousel ul {
+position: relative;
+}
+
+ul > li {
+list-style-type: none;
+position: relative;
+top: 30%;
+transition: 1s opacity;
+}
+
+#audio {
+position: relative;
+display: block;
+width: 200px;
+margin: 10% 0 0 35%;
+align-self: center;
+top: 50%;
+align-self: center;
+}
+
+
+
+
+.prev {
+position: absolute;
+display: block;
+margin-left: 10%;
+margin-top: 40%;
+color: rgb(19, 18, 18);
+width: 40px;
+height: 20px;
+font-weight: 800;
+background-color: #dacfd3;
+border-radius: 5px;
+border: 0px solid black;
+}
+
+.next {
+position: absolute;
+display: block;
+margin-left: 85%;
+margin-top: 40%;
+color: rgb(19, 18, 18);
+width: 40px;
+height: 20px;
+font-weight: 800;
+background-color: #dacfd3;
+border-radius: 5px;
+border: 0px solid black;
+}
