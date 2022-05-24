@@ -16,8 +16,8 @@ if ($db_found) {
       
         $sql = "DELETE FROM professeur WHERE mail = '$mail'";
         $result = mysqli_query($db_handle, $sql);
-        echo "Employé supprimé avec succès !";
- 
+
+        
 }
 
 
