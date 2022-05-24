@@ -20,10 +20,14 @@ if ($db_found) {
 
         while ($data = mysqli_fetch_assoc($result)) {
             
-            echo "Informations sur votre compte : <br><br>";
-            echo "Nom : " . $data['nom'];
-            echo "<br>Prénom : " . $data['prenom'];
-            echo "<br>Courriel : " . $data['login']; 
+
+            $_SESSION["nom_admin"]=$data['nom'];
+            $_SESSION["prenom_admin"]=$data['prenom'];
+            $_SESSION["courriel_admin"]=$data['login'];
+
+            header('Location: admin.php');
+            exit();
+
 
         }
 }

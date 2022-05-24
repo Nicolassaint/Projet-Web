@@ -1,3 +1,9 @@
+<?php
+
+session_start(); 
+
+?>
+
 <!DOCTYPE html>
 
 <head>
@@ -10,16 +16,21 @@
 
         $(document).ready(function () {
 
+            var nom_admin = "<?php echo $_SESSION["nom_admin"]; ?>";
+
+            if(nom_admin == ""){
+                $("#informations_admin").hide();
+            }
+
             $("#supression_admin").hide();
             $("#ajout_admin").hide();
             $("#admin_infos_relations").hide();
-
-
-
+   
             $("#suppression").click(function () {
                 $("#supression_admin").show();
                 $("#ajout_admin").hide();
                 $("#admin_infos_relations").hide();
+                $("#informations_admin").hide();
 
             });
 
@@ -27,12 +38,24 @@
                 $("#supression_admin").hide();
                 $("#ajout_admin").show();
                 $("#admin_infos_relations").hide();
+                $("#informations_admin").hide();
+
             });
 
             $("#infos_inter").click(function () {
                 $("#supression_admin").hide();
                 $("#ajout_admin").hide();
                 $("#admin_infos_relations").show();
+                $("#informations_admin").hide();
+
+            });
+
+            $("#votre_compte").click(function () {
+                $("#supression_admin").hide();
+                $("#ajout_admin").hide();
+                $("#admin_infos_relations").hide();
+                $("#informations_admin").show();
+
             });
 
         });
@@ -61,7 +84,7 @@
             <input type="button" value="Exportation CV" class="bouton_accueil" id="exporationCV">
             <input type="button" value="Relations Internationales" class="bouton_accueil" id="infos_inter">
             <input type="button" value="Disponibilités personnel" class="bouton_accueil" id="dispo_personnel">
-            <form action="admin_infos.php" method="GET">
+            <form action="admin_infos.php" method="POST">
                 <input type="submit" value="Votre compte" class="bouton_accueil" id="votre_compte">
             </form>
         </div>
@@ -123,10 +146,15 @@
             </div>
         </form>
 
+        <div id="informations_admin">
+         
 
-
-
-    </div>
+          <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Informations Admin : </b></p><br>
+         <p>Nom : <?php echo $_SESSION["nom_admin"]; ?></p>
+         <p>Prenom : <?php echo $_SESSION["prenom_admin"]; ?></p>
+         <p>Courriel : <?php echo $_SESSION["courriel_admin"]; ?></p>
+    
+        </div>
 
 
 </body>
