@@ -1,5 +1,7 @@
 body {
     background-color: rgba(159, 158, 183, 0.442);
+
+
 }
 
 
@@ -57,7 +59,7 @@ body {
 
 
 .bouton_accueil {
-    background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+    background-image: linear-gradient(to right, #000C7B 0%, #6F71A3 51%, #7E84F7 100%);
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
