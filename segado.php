@@ -9,15 +9,18 @@
 //Si la Base de données existe
 if ($db_found) {
     
-    $sql = "SELECT nom FROM professeur WHERE departement like '%Informatique%'";
+    $sql = "SELECT nom,prenom,departement,salle,tel,mail,photo FROM professeur WHERE nom like '%segado%'";
     $result = mysqli_query($db_handle, $sql);
 
     while ($data = mysqli_fetch_assoc($result)) {
+    echo "prenom : " . $data['prenom'] . '<br>';
     echo "nom : " . $data['nom'] . '<br>';
+    echo "departement : " . $data['departement'] . '<br>';
+    echo "salle : " . $data['salle'] . '<br>';
+    echo "tel : " . $data['tel'] . '<br>';
+    echo "mail    : " . $data['mail'] . '<br>';
+    echo "photo : " . $data['photo'] . '<br>';
 
-   echo '<form action="segado.php" method="post">';
-    echo '<input type="button" value="'.$data['nom'].'">';
-    echo '</form>';
 
     echo "</table>";
     } 
