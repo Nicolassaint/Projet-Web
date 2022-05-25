@@ -13,11 +13,9 @@ if ($db_found) {
     $result = mysqli_query($db_handle, $sql);
 
     while ($data = mysqli_fetch_assoc($result)) {
-    echo "nom : " . $data['nom'] . '<br>';
+    echo "nom : " . $data['nom'] . "  ";
+    echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
 
-   echo '<form action="segado.php" method="post">';
-    echo '<input type="button" value="'.$data['nom'].'">';
-    echo '</form>';
 
     echo "</table>";
     } 

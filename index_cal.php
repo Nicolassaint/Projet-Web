@@ -1,6 +1,9 @@
 <?php
 function build_calendar($month, $year) {
-    $mysqli = new mysqli('localhost', 'root', '', 'projetweb');
+    $database = "projetweb";
+$db_handle = mysqli_connect('localhost', 'root', '' );
+$db_found = mysqli_select_db($db_handle, $database);
+$mysqli = new mysqli('localhost', 'root', '', 'projetweb');
     /*$stmt = $mysqli->prepare("select * from rdv where MONTH(date) = ? AND YEAR(date) = ?");
     $stmt->bind_param('ss', $month, $year);
     $bookings = array();

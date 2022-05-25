@@ -9,7 +9,7 @@
 //Si la Base de données existe
 if ($db_found) {
     
-    $sql = "SELECT nom,prenom,departement,salle,tel,mail,photo FROM professeur WHERE nom like '%segado%'";
+    $sql = "SELECT nom,prenom,departement,salle,tel,mail,photo FROM professeur WHERE nom like '%$_GET[nom]%'";
     $result = mysqli_query($db_handle, $sql);
 
     while ($data = mysqli_fetch_assoc($result)) {
