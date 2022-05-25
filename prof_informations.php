@@ -21,12 +21,19 @@ if ($db_found) {
         while ($data = mysqli_fetch_assoc($result)) {
             
 
-            $_SESSION["nom_prof"]=$data['nom'];
-            $_SESSION["prenom_prof"]=$data['prenom'];
-            $_SESSION["courriel_prof"]=$data['mail'];
 
-            header('Location: prof.php');
-            exit();
+        echo"<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Informations employé : </b></p><br>";
+
+         echo"<p>Nom : ".$data['nom']. "</p>";
+         echo"<p>Prenom : ".$data['prenom']."</p>";
+         echo"<p>Courriel : ".$data['mail']."</p>";
+         
+           // $_SESSION["nom_prof"]=$data['nom'];
+            //$_SESSION["prenom_prof"]=$data['prenom'];
+            //$_SESSION["courriel_prof"]=$data['mail'];
+
+            //header('Location: prof.php');
+            //exit();
 
 
         }
