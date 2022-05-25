@@ -4,15 +4,26 @@ $cleanup=0;
 $start="09:00";
 $end="15:00";
 
-function timslots($duration, $cleanup, $start, $end)
+function timeslots($duration, $cleanup, $start, $end)
 {
     $start= new DateTime($start);
     $end= new DateTime($end);
     $interval = new DateInterval("PT".$duration."M");
-    $cleanupinterval = new DateInterval("PT".$cleanup."M");
+    $cleanupInterval = new DateInterval("PT".$cleanup."M");
     $slots=array();
 
-   // for($)
+    for($intStart = $start; $intStart<$end; $intStart->add($interval)->add($cleanupInterval)){
+        $endPeriod = clone $intStart;
+        $endPeriod->add($interval);
+        if($endPeriod>$end){
+            break;
+        }
+        
+        $slots[] = $intStart->format("H:iA")." - ". $endPeriod->format("H:iA");
+        
+    }
+    
+    return $slots;
 }
 
 ?>
@@ -46,19 +57,7 @@ function timslots($duration, $cleanup, $start, $end)
     $week=$dt->format('W');
     $month=$dt->format('F');
     $year=$dt->format('Y');
-    //////////////
-   /*$year = (isset($_GET['year'])) ? $_GET['year'] : date("Y");
-    $week = (isset($_GET['week'])) ? $_GET['week'] : date('W');
-    if($week > 52) {
-    $year++;
-    $week = 1;
-    } 
-    elseif($week < 1) {
-    $year--;
-    $week = 52;
-    }*/
     ?>
-
 
     <div class="container">
     <div class="row">
@@ -74,7 +73,7 @@ function timslots($duration, $cleanup, $start, $end)
                 <tr class="success">
                     
                     <?php
-                    echo"<center>";
+                    
                     do{
                         if($dt->format('d M Y')==date('d M Y'))
                         {
@@ -85,19 +84,23 @@ function timslots($duration, $cleanup, $start, $end)
                         
                         $dt->modify('+1 day');
                     }while($week==$dt->format('W'));
-                    echo"</center>";
-                    ///////////////////
-                       /* if($week < 10) {
-                            $week = '0'. $week;
-                        }
-                        for($day= 1; $day <= 7; $day++) {
-                            $d = strtotime($year ."W". $week . $day);
-
-                            echo "<td>". date('l', $d) ."<br>". date('d M', $d) ."</td>";
-                        }*/
-                    ?>
                     
+                    ?>
                  </tr>
+                
+                 <?php $timeslots = timeslots($duration, $cleanup, $start, $end); 
+                foreach($timeslots as $ts){
+                ?>
+                <tr>
+                     <td><button class="btn btn-success btn-xs"><?php echo $ts; ?></button></td>
+                     <td><button class="btn btn-success btn-xs"><?php echo $ts; ?></button></td>
+                     <td><button class="btn btn-success btn-xs"><?php echo $ts; ?></button></td>
+                     <td><button class="btn btn-success btn-xs"><?php echo $ts; ?></button></td>
+                     <td><button class="btn btn-success btn-xs"><?php echo $ts; ?></button></td>
+                     <td><button class="btn btn-success btn-xs"><?php echo $ts; ?></button></td>
+                     <td><button class="btn btn-success btn-xs"><?php echo $ts; ?></button></td>
+                </tr>
+                <?php }?>
             </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

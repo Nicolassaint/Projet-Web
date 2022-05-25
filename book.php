@@ -1,8 +1,4 @@
 <?php
-$duration = 15;
-$cleanup = 0;
-$start = "09:00";
-$end = "15:00";
 
 if(isset($_GET['date'])){
     $date = $_GET['date'];
@@ -12,23 +8,20 @@ if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $email_etudiant = $_POST['email_etudiant'];
     $timeslot = $_POST['timeslot'];
-    $stmt = $mysqli->prepare("select * from rdv where date = ?");
-    $stmt->bind_param('s', $date);
-    if($stmt->execute()){
-        $result = $stmt->get_result();
-        if($result->num_rows>0){
-            $msg = "<div class='alert alert-danger'>Already Booked</div>";
-        }else{
-            $stmt = $mysqli->prepare("INSERT INTO rdv (name, timeslot, email_etudiant, date) VALUES (?,?,?,?)");
-            $stmt->bind_param('ssss', $name, $timeslot, $email_etudiant, $date);
-            $stmt->execute();
-            $msg = "<div class='alert alert-success'>Booking Successfull</div>";
-            $stmt->close();
-            $mysqli->close();
-        }
-    }
+    $mysqli = new mysqli('localhost', 'root', '', 'projetweb');
+    $stmt = $mysqli->prepare("INSERT INTO rdv (name, email_etudiant, date, timeslot) VALUES (?,?,?,?)");
+    $stmt->bind_param('ssss', $name, $email_etudiant, $date, $timeslot);
+    $stmt->execute();
+    $msg = "<div class='alert alert-success'>Booking Successfull</div>";
+    $stmt->close();
+    $mysqli->close();
 }
 
+
+$duration = 15;
+$cleanup = 0;
+$start = "09:00";
+$end = "15:00";
 
 function timeslots($duration, $cleanup, $start, $end){
     $start = new DateTime($start);
@@ -79,9 +72,6 @@ function timeslots($duration, $cleanup, $start, $end){
                     <div class="col-md-2">
                         <div class="form-group">
                         <button class="btn btn-success book" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?></button>
-
-          
-
                         </div>
                     </div>
                 <?php } ?>
@@ -89,8 +79,6 @@ function timeslots($duration, $cleanup, $start, $end){
     </div>
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -126,6 +114,7 @@ function timeslots($duration, $cleanup, $start, $end){
     </div>
 
     <script>
+        
 $(".book").click(function(){
     var timeslot = $(this).attr('data-timeslot');
     $("#slot").html(timeslot);
