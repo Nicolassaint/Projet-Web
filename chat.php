@@ -10,7 +10,7 @@ if (isset($_GET['logout'])) {
     $myfile = fopen(__DIR__ . "/log.html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/log.html");
     fwrite($myfile, $logout_message);
     fclose($myfile);
-    session_destroy();
+    //session_destroy();
     sleep(1);
     
     header("Location: chat.php"); //Rediriger l'utilisateur

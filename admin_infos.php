@@ -21,12 +21,11 @@ if ($db_found) {
         while ($data = mysqli_fetch_assoc($result)) {
             
 
-            $_SESSION["nom_admin"]=$data['nom'];
-            $_SESSION["prenom_admin"]=$data['prenom'];
-            $_SESSION["courriel_admin"]=$data['login'];
+            echo "<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Informations admin : </b></p><br>";
 
-            header('Location: admin.php');
-            exit();
+            echo" <p>Nom : ".$data['nom']."</p>";
+            echo"<p>Prenom : ".$data['prenom']."</p>";
+            echo"<p>Mail : ".$data['login']."</p>";
 
 
         }

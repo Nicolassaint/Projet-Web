@@ -16,11 +16,6 @@ session_start();
 
         $(document).ready(function () {
 
-            var nom_admin = "<?php echo $_SESSION["nom_admin"]; ?>";
-
-            if(nom_admin == ""){
-                $("#informations_admin").hide();
-            }
 
             $("#supression_admin").hide();
             $("#ajout_admin").hide();
@@ -30,7 +25,6 @@ session_start();
                 $("#supression_admin").show();
                 $("#ajout_admin").hide();
                 $("#admin_infos_relations").hide();
-                $("#informations_admin").hide();
 
             });
 
@@ -38,7 +32,6 @@ session_start();
                 $("#supression_admin").hide();
                 $("#ajout_admin").show();
                 $("#admin_infos_relations").hide();
-                $("#informations_admin").hide();
 
             });
 
@@ -46,17 +39,8 @@ session_start();
                 $("#supression_admin").hide();
                 $("#ajout_admin").hide();
                 $("#admin_infos_relations").show();
-                $("#informations_admin").hide();
-
             });
 
-            $("#votre_compte").click(function () {
-                $("#supression_admin").hide();
-                $("#ajout_admin").hide();
-                $("#admin_infos_relations").hide();
-                $("#informations_admin").show();
-
-            });
 
         });
 
@@ -146,15 +130,6 @@ session_start();
             </div>
         </form>
 
-        <div id="informations_admin">
-         
-
-          <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Informations Admin : </b></p><br>
-         <p>Nom : <?php echo $_SESSION["nom_admin"]; ?></p>
-         <p>Prenom : <?php echo $_SESSION["prenom_admin"]; ?></p>
-         <p>Courriel : <?php echo $_SESSION["courriel_admin"]; ?></p>
-    
-        </div>
 
 
 </body>
