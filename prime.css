@@ -1,5 +1,6 @@
 body {
-    background-color: rgba(159, 158, 183, 0.442);
+    background-color: #190036;
+    color: white;
 
 
 }
@@ -13,7 +14,7 @@ body {
 
 #titre {
 
-    color: #175f93;
+    color: white;
     font-size: 50px;
     padding-right: 10px;
 
@@ -67,7 +68,7 @@ body {
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
-    box-shadow: 0 0 20px #eee;
+    box-shadow: 0 0 20px #6f71a3;
     border-radius: 10px;
 
 }
@@ -100,7 +101,7 @@ body {
     background-image: linear-gradient(to right, #000C7B 0%, #6F71A3 51%, #7E84F7 100%);
     margin: 10px;
     padding: 15px 45px;
-    text-align: center;
+    text-align: center;s
     text-transform: uppercase;
     background-size: 200% auto;
     color: white;
