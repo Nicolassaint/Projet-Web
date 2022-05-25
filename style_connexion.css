@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #7aacef;
+    background-color: #190036;
 }
 
 .container {
@@ -37,7 +37,7 @@ body {
     border-radius: 50%;
     box-shadow: 0 5px 5px #ccc;
     font-size: 1.8em;
-    background-color: #6ba1f9;
+    background-color: #190036;
     color: #f0f6fb;
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@ body {
 .row {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #82ade6de;
+    border-bottom: 1px solid #190036;
     padding: 1.8% 0;
     margin: 20px 0;
 }
@@ -75,12 +75,12 @@ body {
     width: 90%;
     border: none;
     outline: none;
-    color: #82ade6de;
+    color: #190036;
     font-weight: 550;
 }
 
 .input::placeholder {
-    color: #82ade6ad;
+    color: #190036;
 }
 
 .link {
@@ -104,7 +104,7 @@ body {
     width: 120px;
     height: 45px;
     border-radius: 50px;
-    background-color: #6ba1f9;
+    background-color: #190036;
     border: none;
     outline: none;
     color: #fff;
@@ -122,7 +122,7 @@ body {
 
 .tab-link {
     text-decoration: none;
-    color: #6ba1f9ee;
+    color: #190036;
     margin: 0 3%;
 }
 
