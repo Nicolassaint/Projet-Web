@@ -71,7 +71,7 @@ session_start();
         <div id="header">
 
             <h1 id="titre">Admin Omnes Scolaire</h1>
-            <img src="omnes_logo.webp" id="droite" alt="omnes_logo" width="300" height="100">
+            <img src="omnes_logo.png" id="droite" alt="omnes_logo" width="300" height="100">
 
         </div>
 
