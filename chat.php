@@ -10,9 +10,10 @@ if (isset($_GET['logout'])) {
     $myfile = fopen(__DIR__ . "/log.html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/log.html");
     fwrite($myfile, $logout_message);
     fclose($myfile);
-    //session_destroy();
+    session_destroy();
     sleep(1);
-    header("Location: prof.php"); //Rediriger l'utilisateur
+    
+    header("Location: chat.php"); //Rediriger l'utilisateur
 }
 if (isset($_POST['enter'])) {
     if ($_POST['name'] != "") {
@@ -103,7 +104,6 @@ function loginForm()
                     var exit = confirm("Voulez-vous vraiment mettre fin à la session ?");
                     if (exit == true) {
                         window.location = "chat.php?logout=true";
-                        header("Location : prof.php");
                     }
                 });
             });

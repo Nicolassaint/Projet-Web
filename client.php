@@ -57,6 +57,7 @@ session_start();
             <a href="index.html"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
             <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
             <input type="button" value="Coordonnées" class="bouton_accueil" id="coordonnées">
+            <a href="chat.php"><input type="button" value="Communication" class="bouton_accueil" id="communication"></a>
             <form action="client_infos.php" method="POST">
                 <input type="submit" value="Votre compte" class="bouton_accueil" id="votre_compte">
             </form>
