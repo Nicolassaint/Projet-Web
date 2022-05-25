@@ -34,8 +34,10 @@ if ($db_found) {
 
             }
             else{                
-                echo "Connexion échouée, le login ou mot de passe est incorrect !";
-           }
+                echo "<script>alert(\"Mot de passe ou login incorrect !\")</script>";
+                sleep(1);
+                header('Location: compte.php');
+            }
         }
 
     }
@@ -55,8 +57,9 @@ if ($db_found) {
 
             }
             else{                
-                echo "Connexion échouée, le login ou mot de passe est incorrect !";
-           }
+                sleep(1);
+                header('Location: compte.php');           
+            }
         }
 
     }
@@ -73,13 +76,14 @@ if ($db_found) {
             if(($data["login"] == $login) && ($data["mdp"] == $password))
             {
                 $_SESSION["adresse_admin"] = $login;
-                header('Location: admin.html');
+                header('Location: admin.php');
                 exit();
 
             }
             else{                
-                echo "Connexion échouée, le login ou mot de passe est incorrect !";
-           }
+                sleep(1);
+                header('Location: compte.php');
+                       }
         }
 
     }
@@ -87,10 +91,3 @@ if ($db_found) {
     
  
 }
-
-
-
-
-
-
-?>
