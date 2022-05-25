@@ -37,7 +37,7 @@ function timeslots($duration, $cleanup, $start, $end){
             break;
         }
         
-        $slots[] = $intStart->format("H:iA")." - ". $endPeriod->format("H:iA");
+        $slots[] = $intStart->format("H:i:s");//." - ". $endPeriod->format("H:iA");
         
     }
     
@@ -71,7 +71,7 @@ function timeslots($duration, $cleanup, $start, $end){
                 ?>
                     <div class="col-md-2">
                         <div class="form-group">
-                        <button class="btn btn-success book" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?></button>
+                       <?php echo '<td><span><a href="book_1.php?date='.$date.'&time='.$ts.'">'.$ts.'</a><span></td>';?>
                         </div>
                     </div>
                 <?php } ?>
