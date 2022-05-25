@@ -30,8 +30,9 @@ if ($db_found) {
 
             if(($data["login"] == $login) && ($data["mdp"] == $password))
             {
-                echo "Connexion client reussie.";
-
+                $_SESSION["adresse_client"] = $login;
+                header('Location: client.php');
+                exit();
             }
             else{                
                 echo "<script>alert(\"Mot de passe ou login incorrect !\")</script>";
@@ -53,7 +54,9 @@ if ($db_found) {
 
             if(($data["mail"] == $login) && ($data["mdp"] == $password))
             {
-                echo "Connexion prof reussie.";
+                $_SESSION["adresse_prof"] = $login;
+                header('Location: prof.php');
+                exit();
 
             }
             else{                
