@@ -94,8 +94,9 @@ if ($db_found) {
             
                        
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-            //affichage du cv et des infos manquantes
-            //echo "<b>Afficher son CV : </b> <p><span><a href='segado.php?nom='". $data['nom'].">details view</a><span><br></p>";
+            echo "<b>Afficher son CV : </b>"; 
+            echo "<br>";
+            echo '<span><a href="lecor.php?nom='. $data['nom'].'">details view</a><span><br>';
             echo'</div>';
             
         }
