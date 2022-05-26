@@ -206,10 +206,11 @@
         <div id="section_recherche" class="section padding_bouton">
 
             <div id="encadrement_recherche">
-                <input type="text" placeholder="Nom de spécialité ou établissement" id="barre_recherche">
+                <form action = "recherche.php" method="post">
+                <input type="text" placeholder="Nom ou spécialité ou établissement" id="barre_recherche" name="recherche">
                 <input type="submit" value="Rechercher" class="bouton_recherche">
                 <div id="slider"><img src="loupe.png" width="50" height="50" id="loupe"></div>
-
+                </form>
             </div>
 
         </div>
@@ -245,10 +246,18 @@
 
         <div id="section_services" class="section padding_bouton">
 
-            <input type="button" value="Universités partenaires" class="boutons_inter">
-            <input type="button" value="Doubles diplômes à l'international" class="boutons_inter">
-            <input type="button" value="Apprentissage des langues" class="boutons_inter">
-            <input type="button" value="Summer School" class="boutons_inter">
+            <form action="universites.php" action="POST">
+            <input type="submit" value="Universités partenaires" class="boutons_inter">
+            </form>
+            <form action="diplomes.php" action="POST">
+            <input type="submit" value="Doubles diplômes à l'international" class="boutons_inter">
+            </form>
+            <form action="langues.php" action="POST">
+            <input type="submit" value="Apprentissage des langues" class="boutons_inter">
+            </form>
+            <form action="summer.php" action="POST">
+            <input type="submit" value="Summer School" class="boutons_inter">
+            </form>
 
         </div>
 

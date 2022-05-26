@@ -28,12 +28,6 @@ if ($db_found) {
          echo"<p>Prenom : ".$data['prenom']."</p>";
          echo"<p>Courriel : ".$data['mail']."</p>";
          
-           // $_SESSION["nom_prof"]=$data['nom'];
-            //$_SESSION["prenom_prof"]=$data['prenom'];
-            //$_SESSION["courriel_prof"]=$data['mail'];
-
-            //header('Location: prof.php');
-            //exit();
 
 
         }

@@ -21,13 +21,13 @@ if ($db_found) {
         while ($data = mysqli_fetch_assoc($result)) {
             
 
-            $_SESSION["nom_client"]=$data['nom'];
-            $_SESSION["prenom_client"]=$data['prenom'];
-            $_SESSION["mail_client"]=$data['login'];
+            echo "<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Informations client : </b></p><br>";
 
-            header('Location: client.php');
-            exit();
-
+        echo" <p>Nom : ".$data['nom']."</p>";
+        echo"<p>Prenom : ".$data['prenom']."</p>";
+       // echo"<p>Adresse : ".$data['adresse_client']."</p>";
+        echo"<p>Mail : ".$data['login']."</p>";
+       // echo"<p>Carte Etudiante : ".$data['carte_client']."</p>";
 
         }
 }
