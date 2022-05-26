@@ -13,11 +13,13 @@ $db_found = mysqli_select_db($db_handle, $database);
 $erreur = "";
 
 if ($recherche == "") {
-    $erreur .= "Le champ Nom est vide. <br>";
+    $erreur = "Le champ Nom est vide";
 }
 
+
+
 //si le BDD existe, faire le traitement
-if ($db_found) {
+if (($db_found) && ($erreur == "")) {
 
     $sql = "SELECT * from professeur WHERE nom = '$recherche'";
     $sql2 = "SELECT * from professeur WHERE departement = '$recherche'";
@@ -136,5 +138,22 @@ if ($db_found) {
             echo "</tr>";
         }
         echo "</table>";
+
+
     }
+
+    if((mysqli_num_rows($result)==0) && (mysqli_num_rows($result2)==0) && (mysqli_num_rows($result3)==0) && (mysqli_num_rows($result4)==0))
+{
+    echo "Aucun résultat trouvé pour : ".$recherche." !";
 }
+}
+else{
+
+    echo "Vous devez rentrer quelque chose !";
+
+
+}
+
+
+
+?>

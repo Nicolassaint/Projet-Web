@@ -95,29 +95,40 @@ function timeslots($duration, $cleanup, $start, $end){
                 <?php echo(isset($msg))?$msg:""; ?>
             </div>
                 <?php 
-                    $sql = mysqli_query($mysqli,"SELECT DISTINCT heure from rdv");
-                    $sql_jour = mysqli_query($mysqli,"SELECT jour from rdv");
-                    $result=mysqli_fetch_assoc($sql);
-                    $result_jour=mysqli_fetch_row($sql_jour);
-                    echo implode(" ",$result);
-                    echo implode(" ",$result_jour);
-                $timeslots = timeslots($duration, $cleanup, $start, $end); 
-                foreach($timeslots as $ts){
-                ?>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                           <?php if(in_array($_GET['date'],$result_jour)){
-                                    if(mysqli_num_rows($sql)>0){
-                                        if(in_array($ts,$result)){
-                                            echo '<td><span><a class="btn btn-danger book">'.$ts.'</a><span></td>';
-                                        }else{
-                                            echo '<td><span><a class="btn btn-success book" href="book_1.php?mail='.$_GET['mail'].'&date='.$_GET['date'].'&time='.$ts.'">'.$ts.'</a><span></td>';?>
-                                    <?php }
-                                    }
-                                }?>
+                    $database = "projetweb";
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    $jour=$_GET['date'];
+                    if($db_found){
+                        $sql = "SELECT heure from rdv";
+                        $sql_jour ="SELECT jour from rdv";
+                        $result = mysqli_query($db_handle, $sql);
+                        $result_jour = mysqli_query($db_handle, $sql_jour);
+                      //  echo "hellloo";
+                    $timeslots = timeslots($duration, $cleanup, $start, $end); 
+                   // while( $data_jour=mysqli_fetch_array($result_jour)){
+                     //  while($data=mysqli_fetch_assoc($result)){
+                        foreach($timeslots as $ts){
+                    ?>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                               <?php 
+                                  // echo "jour : ".$jour." et le jour:".$data['jour'];
+                                 // echo $jour;
+                                 // echo "jour: ".$data_jour['jour'];
+                                  
+                                          //  if(($jour === $data_jour['jour'])){
+                                          //      echo '<td><span><a class="btn btn-danger book">'.$ts.'</a><span></td>';
+                                          //  }else{
+                                                echo '<td><span><a class="btn btn-success book" href="book_1.php?mail='.$_GET['mail'].'&date='.$_GET['date'].'&time='.$ts.'">'.$ts.'</a><span></td>';?>
+                                        <?php// }      
+                                  ?>   
+                            </div>
                         </div>
-                    </div>
-                <?php } ?>
+                    <?php 
+                        }
+                    }  
+                 ?>
         </div>
     </div>
     <div id="myModal" class="modal fade" role="dialog">

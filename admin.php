@@ -117,8 +117,11 @@ session_start();
                     <input type="text" placeholder="Mot de Passe" id="barre_recherche" name="password">
                     <br><br><label style="color: white;">Photo : </label>
                     <input type="file" placeholder="Fichier photo" accept=".jpg,.png" name="photo" id="Photo"><br>
-                    <br> <label style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;CV : </label>
-                    <input type="file" placeholder="Fichier CV" accept=".pdf,.jpg,.png" name="CV" id="CV">
+
+                    <input type="text" placeholder="Formations"  name="formations" id="barre_recherche">
+                    <input type="text" placeholder="Expériances"  name="experiances" id="barre_recherche">
+                    <input type="text" placeholder="Publications"  name="publications" id="barre_recherche">
+
                     <input type="text" placeholder="Profession" id="barre_recherche" name="profession">
                     <input type="text" placeholder="Salle" id="barre_recherche" name="salle">
                     <input type="text" placeholder="Département" id="barre_recherche" name="departement">
