@@ -46,20 +46,16 @@
 
                 </ul>
                 <div id="barre_recherche">
-                    <form role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form role="search" action="recherche.php" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="recherche">
 
+
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
-                     <!-- la recherche n'est pas encore fonctionnelle-->
-
-                    <form>
-                    <button class="btn btn-outline-success" type="submit" formaction="recherche.php">Search</button>
-                </form>
                 </div>
                 <!-- le bouton connexion ne marche toujours pas jsp quel fichier il faut appeler d'ici -->
-                <form action="type_utilisateur.php" method="post">
-                <button type="submit" class="btn btn-outline-light">SE CONNECTER</button>
-                </form>
+                    <a class="btn btn-outline-light" href="choix_compte.php">SE CONNECTER</a>
+                
             </div>
         </div>
     </nav>
@@ -124,7 +120,8 @@
                     Le Séminaire D’Intégration est une association qui s’occupe, comme son nom l’indique, de
                     l’intégration des nouveaux élèves de l’ECE.
                     Le séminaire d’intégration est l’un des principaux évènements de l’année. Il accueille près de 1200
-                    nouveaux étudiants. Ce séjour leur permet de recevoir un accueil chaleureux et d’entrer de plein pied dans la
+                    nouveaux étudiants. Ce séjour leur permet de recevoir un accueil chaleureux et d’entrer de plein
+                    pied dans la
                     vie étudiante. C’est la première impression qu’ils auront de l’école, et qu’ils garderont tout au
                     long de leur vie.
                     Rendez-vous en septembre pour les rencontrer!
