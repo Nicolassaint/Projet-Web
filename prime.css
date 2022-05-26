@@ -187,17 +187,6 @@ body {
     padding: 100px;
 }
 
-#footer {
-
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-    border-left: 2px solid;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
 
 #map {
     padding-left: 100px;
@@ -293,11 +282,17 @@ border: 0px solid black;
 .b p{
     color: white;
     text-align: justify;
+    margin-top: 30px;
     /*margin-right : 10px;*/
 }
 
 .b h2{
     text-align: center;
+    margin-top: 30px;
+}
+
+.a h3{
+    margin-bottom: 30px;
 }
 
 .t{
@@ -316,4 +311,17 @@ border: 0px solid black;
     margin-top: 20px;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.footer {
+
+    padding-top: 100px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.footer p{
+    text-align: center;
 }
