@@ -1,4 +1,3 @@
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,16 +15,6 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
     <link href="prime.css" rel="stylesheet" type="text/css" />
-
-    <?php
-
-    //identifier le nom de base de données
-    $database = "projetweb";
-    //connectez-vous dans votre BDD
-
-    $db_handle = mysqli_connect('localhost', 'root', '');
-    $db_found = mysqli_select_db($db_handle, $database);
-    ?>
 </head>
 
 <body>
@@ -72,38 +61,41 @@
         </div>
     </nav>
 
-    <h2 style ="text-align : center;">Universités partenaires</h2>
-
    
-    <?php
-    //si le BDD existe, faire le traitement
-if ($db_found) {
+    <div class="relations_internationales">
+     <c>
+    <div class="conteneur_inter">
+        <b>  
+               
+                <div id="image_inter">
+                    <img src="relations_internationales.png" width="300" height="200">
+                </div>
 
-    $sql = "SELECT * from univ_partenaires";
-
-    $result = mysqli_query($db_handle, $sql);
-
-   
-        
-
-        while ($data = mysqli_fetch_assoc($result)) {
-            echo '<div class="container infos">
-            <img src="nos services.png" width="250" height="200">
-        </div>';
-
-            echo '<div class = "relations_internationales">';
-                       
-            echo "<b>Université : </b><p> " . $data['nom'] ."</p>";
-            echo "<b>Adresse : </b> <p>" . $data['adresse'] . "</p>";
-            echo "<b>Contact : </b><p>" . $data['contact'] . "</p>";
-            echo'</div>';
-            
-        }
-        
+                <div id="texte_inter">
+                    <p>
+                        <b>
+                            <h2>Relation Internationale</h2>
+                            Salle : P-425 <br><br>
+                            Téléphone : +33 01 12 13 14 15 <br><br>
+                            Email : relation-internationales@omnes-intl.fr<br>
+                        </b>
+                    </p>
     
-    }
+                    <form>
+                        <b>
+                    <input type="submit" value="Nos services" id="nosservices" class="btn btn-outline-light" formaction = "nos_services.php" >
+                        </b>
+                    </form>
 
-    ?>
+                </div>
+                
+            </div>
+        </b>
+    </div>
+</c>
+    </div>
+
+       
 
 
     <div class="footer">
@@ -140,6 +132,3 @@ if ($db_found) {
         </div>
 
 </body>
-
-
-

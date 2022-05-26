@@ -1,4 +1,3 @@
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,17 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
-    <link href="prime.css" rel="stylesheet" type="text/css" />
-
-    <?php
-
-    //identifier le nom de base de données
-    $database = "projetweb";
-    //connectez-vous dans votre BDD
-
-    $db_handle = mysqli_connect('localhost', 'root', '');
-    $db_found = mysqli_select_db($db_handle, $database);
-    ?>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -72,38 +61,18 @@
         </div>
     </nav>
 
-    <h2 style ="text-align : center;">Universités partenaires</h2>
+    <div class="container infos">
+        <img src="la recherche.png" width="250" height="200">
+    </div>
 
-   
-    <?php
-    //si le BDD existe, faire le traitement
-if ($db_found) {
-
-    $sql = "SELECT * from univ_partenaires";
-
-    $result = mysqli_query($db_handle, $sql);
-
-   
-        
-
-        while ($data = mysqli_fetch_assoc($result)) {
-            echo '<div class="container infos">
-            <img src="nos services.png" width="250" height="200">
-        </div>';
-
-            echo '<div class = "relations_internationales">';
-                       
-            echo "<b>Université : </b><p> " . $data['nom'] ."</p>";
-            echo "<b>Adresse : </b> <p>" . $data['adresse'] . "</p>";
-            echo "<b>Contact : </b><p>" . $data['contact'] . "</p>";
-            echo'</div>';
-            
-        }
-        
     
-    }
-
-    ?>
+    <form>
+            <div id="section_parcourir_recherche"  class="section padding_button">
+                <input type="submit" value="Systèmes intelligents communicants" class="btn btn-outline-light" formaction="syst_int.php">
+                <input type="submit" value="Mathématiques pour l’ingénierie" class="btn btn-outline-light" formction="maths_ing.php">
+                <input type="submit" value="Nanoscience et nanotechnologie pour l’ingénierie" class="btn btn-outline-light" formation="nano.php">
+            </div>
+    </form>
 
 
     <div class="footer">
@@ -140,6 +109,3 @@ if ($db_found) {
         </div>
 
 </body>
-
-
-

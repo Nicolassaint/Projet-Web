@@ -153,37 +153,46 @@ body {
 
 }
 .section {
-    border: 2px solid;
-    text-align: center;
-    padding: 20px;
+    padding: center;
+    text-align: center;;
 }
 
-#conteneur_inter {
+.conteneur_inter {
 
+    padding-left: center;
+    display: inline-block;
+    display: center;
     border: 2px solid;
+    text-align: center;
     border-radius: 20px;
-    background-color: rgb(79, 132, 79);
-    width: 700px;
-    height: 300px;
+    width: 800px;
+    height: 400px;
 
+}
+
+.conteneur_inter b{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 #image_inter{
     display: inline-block;
+    display: center;
     padding-right: 50px;
     padding-top: 20px;
     padding-left: 20px;
 }
 #texte_inter{
     display: inline-block;
-    margin-bottom :40px;
+    text-align: justify;
+    margin-bottom :50px;
 }
 
-#relations_internationales{
-
-    border: 2px solid;
-    padding: 30px;
-    padding-left: 320px;
+.relations_internationales{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 
@@ -191,17 +200,6 @@ body {
     padding: 100px;
 }
 
-#footer {
-
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-    border-left: 2px solid;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
 
 #map {
     padding-left: 100px;
@@ -297,11 +295,17 @@ border: 0px solid black;
 .b p{
     color: white;
     text-align: justify;
+    margin-top: 30px;
     /*margin-right : 10px;*/
 }
 
 .b h2{
     text-align: center;
+    margin-top: 30px;
+}
+
+.a h3{
+    margin-bottom: 30px;
 }
 
 .t{
@@ -320,4 +324,17 @@ border: 0px solid black;
     margin-top: 20px;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.footer {
+
+    padding-top: 100px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.footer p{
+    text-align: center;
 }

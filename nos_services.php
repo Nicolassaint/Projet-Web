@@ -1,4 +1,3 @@
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,16 +15,6 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
     <link href="prime.css" rel="stylesheet" type="text/css" />
-
-    <?php
-
-    //identifier le nom de base de données
-    $database = "projetweb";
-    //connectez-vous dans votre BDD
-
-    $db_handle = mysqli_connect('localhost', 'root', '');
-    $db_found = mysqli_select_db($db_handle, $database);
-    ?>
 </head>
 
 <body>
@@ -72,38 +61,24 @@
         </div>
     </nav>
 
-    <h2 style ="text-align : center;">Universités partenaires</h2>
-
    
-    <?php
-    //si le BDD existe, faire le traitement
-if ($db_found) {
 
-    $sql = "SELECT * from univ_partenaires";
+        <div id="section_services" class="section padding_bouton">
 
-    $result = mysqli_query($db_handle, $sql);
+            <form action="universites.php" action="POST">
+            <input type="submit" value="Universités partenaires" class="btn btn-outline-light">
+            </form>
+            <form action="diplomes.php" action="POST">
+            <input type="submit" value="Doubles diplômes à l'international" class="btn btn-outline-light">
+            </form>
+            <form action="langues.php" action="POST">
+            <input type="submit" value="Apprentissage des langues" class="btn btn-outline-light">
+            </form>
+            <form action="summer.php" action="POST">
+            <input type="submit" value="Summer School" class="btn btn-outline-light">
+            </form>
 
-   
-        
-
-        while ($data = mysqli_fetch_assoc($result)) {
-            echo '<div class="container infos">
-            <img src="nos services.png" width="250" height="200">
-        </div>';
-
-            echo '<div class = "relations_internationales">';
-                       
-            echo "<b>Université : </b><p> " . $data['nom'] ."</p>";
-            echo "<b>Adresse : </b> <p>" . $data['adresse'] . "</p>";
-            echo "<b>Contact : </b><p>" . $data['contact'] . "</p>";
-            echo'</div>';
-            
-        }
-        
-    
-    }
-
-    ?>
+        </div>
 
 
     <div class="footer">
@@ -140,6 +115,3 @@ if ($db_found) {
         </div>
 
 </body>
-
-
-
