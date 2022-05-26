@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     //On reprend ce que l'on a fait au TD/TP6
     echo "<meta charset=\"UTF-8\">";
     $database = "projetweb";
@@ -8,13 +11,14 @@
    // include 'book.php';
     echo $date = $_GET['date'];
     echo $ts=$_GET['time'];
-
+    echo $mail = $_GET['mail'];
+    //echo $mail_e=$_SESSION["adresse_mail"];
 
 
 //Si la Base de données existe
 if ($db_found) {
    
-    $sql = "INSERT INTO `rdv` (`adresse`, `mail_etudiant`, `mail_prof`, `jour`, `heure`, `infos_sup`) VALUES ('', '', '', '$date', '$ts', '')";
+    $sql = "INSERT INTO `rdv` (`adresse`, `mail_etudiant`, `mail_prof`, `jour`, `heure`, `infos_sup`) VALUES ('', '', '$mail', '$date', '$ts', '')";
     $result = mysqli_query($db_handle, $sql);
     //echo $sql;
     //while ($data = mysqli_fetch_assoc($result)) {

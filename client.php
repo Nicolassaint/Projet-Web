@@ -54,7 +54,7 @@ session_start();
 
         <div id="navigation_admin">
 
-            <a href="index.html"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
+            <a href="index.html?"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
             <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
             <input type="button" value="Coordonnées" class="bouton_accueil" id="coordonnées">
             <form action="client_infos.php" method="POST">
@@ -86,6 +86,7 @@ session_start();
          
 
           <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Informations client : </b></p><br>
+          
 
          <p>Nom : <?php echo $_SESSION["nom_client"]; ?></p>
          <p>Prenom : <?php echo $_SESSION["prenom_client"]; ?></p>
