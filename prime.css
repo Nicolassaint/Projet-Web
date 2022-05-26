@@ -153,41 +153,51 @@ body {
 
 }
 .section {
-  
-    text-align: center;
-    padding: 20px;
+    padding: center;
+    text-align: center;;
 }
 
 .conteneur_inter {
 
-    justify-content: center;
+    padding-left: center;
+    display: inline-block;
+    display: center;
     border: 2px solid;
+    text-align: center;
     border-radius: 20px;
-    width: 600px;
-    height: 500px;
+    width: 800px;
+    height: 400px;
 
+}
+
+.conteneur_inter b{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 #image_inter{
-    padding-left: 150px;
-    justify-content: center;
+    display: inline-block;
+    display: center;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
-.conteneur_inter b{
-    justify-content: center;
-    display:flex;
-    
+#texte_inter{
+    display: inline-block;
+    text-align: justify;
+    margin-bottom :50px;
 }
 
-#relations_internationales{
-
-    border: 2px solid;
-    
+.relations_internationales{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 
 .padding_bouton {
-    justify-content: space-around;
-    display: flex;
+    padding: 100px;
 }
 
 

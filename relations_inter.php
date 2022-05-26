@@ -63,9 +63,9 @@
 
    
     <div class="relations_internationales">
-
-    <b>       
+     <c>
     <div class="conteneur_inter">
+        <b>  
                
                 <div id="image_inter">
                     <img src="relations_internationales.png" width="300" height="200">
@@ -80,6 +80,7 @@
                             Email : relation-internationales@omnes-intl.fr<br>
                         </b>
                     </p>
+    
                     <form>
                         <b>
                     <input type="submit" value="Nos services" id="nosservices" class="btn btn-outline-light" formaction = "nos_services.php" >
@@ -89,8 +90,10 @@
                 </div>
                 
             </div>
-            </b>
-        </div>
+        </b>
+    </div>
+</c>
+    </div>
 
        
 
