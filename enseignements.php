@@ -18,28 +18,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg">
         <div class="container-fluid bar">
             <a class="navbar-brand" href="#"><img src="omnes_logo.png" id="droite" alt="omnes_logo" width="300"
                     height="100"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">ACCUEIL
+                        <a class="nav-link active" aria-current="page" href="page.html">ACCUEIL
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="page.html" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             TOUT PARCOURIR
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">L'ENSEIGNEMENT</a></li>
-                            <li><a class="dropdown-item" href="#">LA RECHERCHE</a></li>
+                            <li><a class="dropdown-item" href="enseignements.php">L'ENSEIGNEMENT</a></li>
+                            <li><a class="dropdown-item" href="la_recherche.php">LA RECHERCHE</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">RELATION INTERNATIONALE</a></li>
+                            <li><a class="dropdown-item" href="relations_inter.php">RELATION INTERNATIONALE</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -69,8 +69,8 @@
     <form>
             <div id="section_enseignement" class="section padding_button">
                 <input type="submit" value="Informatique" class="btn btn-outline-light" formaction="prof_info.php">
-                <input type="submit" value="Mathématiques" class="btn btn-outline-light" formction="prof_maths.php">
-                <input type="submit" value="Physique" class="btn btn-outline-light" formation="prof_physique.php">
+                <input type="submit" value="Mathématiques" class="btn btn-outline-light" formaction="prof_maths.php">
+                <input type="submit" value="Physique" class="btn btn-outline-light" formaction="prof_physique.php">
             </div>
     </form>
 

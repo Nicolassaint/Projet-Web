@@ -25,21 +25,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">ACCUEIL
+                        <a class="nav-link active" aria-current="page" href="page.html">ACCUEIL
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="page.html" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             TOUT PARCOURIR
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">L'ENSEIGNEMENT</a></li>
-                            <li><a class="dropdown-item" href="#">LA RECHERCHE</a></li>
+                            <li><a class="dropdown-item" href="enseignements.php">L'ENSEIGNEMENT</a></li>
+                            <li><a class="dropdown-item" href="la_recherche.php">LA RECHERCHE</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">RELATION INTERNATIONALE</a></li>
+                            <li><a class="dropdown-item" href="relations_inter.php">RELATION INTERNATIONALE</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -53,10 +53,12 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
                     </form>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form>
+                    <button class="btn btn-outline-success" type="submit" formaction ="recherche.php">Search</button>
+                    </form>
                 </div>
 
-                <button type="button" class="btn btn-outline-light">SE CONNECTER</button>
+                <button type="button" class="btn btn-outline-light" formaction = "connexion.php">SE CONNECTER</button>
             </div>
         </div>
     </nav>

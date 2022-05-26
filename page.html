@@ -50,10 +50,16 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
                     </form>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </div>
+                     <!-- la recherche n'est pas encore fonctionnelle-->
 
-                <button type="button" class="btn btn-outline-light">SE CONNECTER</button>
+                    <form>
+                    <button class="btn btn-outline-success" type="submit" formaction="recherche.php">Search</button>
+                </form>
+                </div>
+                <!-- le bouton connexion ne marche toujours pas jsp quel fichier il faut appeler d'ici -->
+                <form action="type_utilisateur.php" method="post">
+                <button type="submit" class="btn btn-outline-light">SE CONNECTER</button>
+                </form>
             </div>
         </div>
     </nav>
