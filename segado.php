@@ -20,6 +20,7 @@ if ($db_found) {
     echo "tel : " . $data['tel'] . '<br>';
     echo "mail    : " . $data['mail'] . '<br>';
     echo "photo : " . $data['photo'] . '<br>';
+    echo '<span><a href="index_cal.php?mail='.$data['mail'].'">prendre un rdv</a><span><br>';
 
 
     echo "</table>";

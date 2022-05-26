@@ -1,21 +1,49 @@
 <?php
+    $mysqli = new mysqli('localhost', 'root', '', 'projetweb');
+    $database = "projetweb";
+    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_found = mysqli_select_db($db_handle, $database);
+if(isset($_GET['jour'])){
 
-if(isset($_GET['date'])){
-    $date = $_GET['date'];
+    $date = $_GET['jour'];
+    $stmt = $mysqli->prepare("select * from rdv where date = ?");
+    $stmt->bind_param('s', $date);
+    $bookings = array();
+    if($stmt->execute()){
+        $result = $stmt->get_result();
+        if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+                $bookings[] = $row['heure'];
+            }
+            
+            $stmt->close();
+        }
+    }
 }
 
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $email_etudiant = $_POST['email_etudiant'];
-    $timeslot = $_POST['timeslot'];
-    $mysqli = new mysqli('localhost', 'root', '', 'projetweb');
-    $stmt = $mysqli->prepare("INSERT INTO rdv (name, email_etudiant, date, timeslot) VALUES (?,?,?,?)");
-    $stmt->bind_param('ssss', $name, $email_etudiant, $date, $timeslot);
+/*
+    $sql = "SELECT * from rdv";
+    $result = mysqli_query($mysqli, $sql);
+ 
+    $stmt = $mysqli->prepare("select * from rdv where jour= ? and heure= :heure");
+    $stmt->bind_param('ss', $date, $timeslot);
+    //$bookings = array();
+    if($stmt->execute()){
+        $result = $stmt->get_result();
+        if($result->num_rows>0){
+            $msg = "<div class='alert alert-danger'>Booked already</div>";
+            }else{
+                $stmt = $mysqli->prepare("INSERT INTO rdv (adresse, mail_etudiant, mail_prof, jour, heure, infos_sup) VALUES ('','','',?,?,'')");
+    $stmt->bind_param('ss', $date, $timeslot);
     $stmt->execute();
     $msg = "<div class='alert alert-success'>Booking Successfull</div>";
+    $bookings[]=$timeslot;
     $stmt->close();
     $mysqli->close();
-}
+
+        }
+    }
+*/
 
 
 $duration = 15;
@@ -37,7 +65,7 @@ function timeslots($duration, $cleanup, $start, $end){
             break;
         }
         
-        $slots[] = $intStart->format("H:iA")." - ". $endPeriod->format("H:iA");
+        $slots[] = $intStart->format("H:i:s");//." - ". $endPeriod->format("H:iA");
         
     }
     
@@ -61,17 +89,32 @@ function timeslots($duration, $cleanup, $start, $end){
 
   <body>
     <div class="container">
-        <h1 class="text-center">Book for Date: <?php echo date('m/d/Y', strtotime($date)); ?></h1><hr>
+        <h1 class="text-center">Book for Date: <?php echo date('m/d/Y', strtotime($_GET['date'])); ?></h1><hr>
         <div class="row">
             <div class="col-md-12">
                 <?php echo(isset($msg))?$msg:""; ?>
             </div>
-                <?php $timeslots = timeslots($duration, $cleanup, $start, $end); 
+                <?php 
+                    $sql = mysqli_query($mysqli,"SELECT DISTINCT heure from rdv");
+                    $sql_jour = mysqli_query($mysqli,"SELECT jour from rdv");
+                    $result=mysqli_fetch_assoc($sql);
+                    $result_jour=mysqli_fetch_row($sql_jour);
+                    echo implode(" ",$result);
+                    echo implode(" ",$result_jour);
+                $timeslots = timeslots($duration, $cleanup, $start, $end); 
                 foreach($timeslots as $ts){
                 ?>
                     <div class="col-md-2">
                         <div class="form-group">
-                        <button class="btn btn-success book" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?></button>
+                           <?php if(in_array($_GET['date'],$result_jour)){
+                                    if(mysqli_num_rows($sql)>0){
+                                        if(in_array($ts,$result)){
+                                            echo '<td><span><a class="btn btn-danger book">'.$ts.'</a><span></td>';
+                                        }else{
+                                            echo '<td><span><a class="btn btn-success book" href="book_1.php?mail='.$_GET['mail'].'&date='.$_GET['date'].'&time='.$ts.'">'.$ts.'</a><span></td>';?>
+                                    <?php }
+                                    }
+                                }?>
                         </div>
                     </div>
                 <?php } ?>
@@ -115,7 +158,7 @@ function timeslots($duration, $cleanup, $start, $end){
 
     <script>
         
-$(".book").click(function(){
+    $(".book").click(function(){
     var timeslot = $(this).attr('data-timeslot');
     $("#slot").html(timeslot);
     $("#timeslot").val(timeslot);

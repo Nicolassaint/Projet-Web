@@ -22,7 +22,7 @@ if ($db_found) {
     if ($utilisateur == "client")
     {
       
-        $sql = "SELECT login , mdp FROM etudiant";
+        $sql = "SELECT login , mdp, nom, prenom FROM etudiant";
 
         $result = mysqli_query($db_handle, $sql);
 
@@ -31,6 +31,7 @@ if ($db_found) {
             if(($data["login"] == $login) && ($data["mdp"] == $password))
             {
                 $_SESSION["adresse_client"] = $login;
+                $_SESSION["name"] = $data["prenom"]." ".$data["nom"];
                 header('Location: client.php');
                 exit();
             }
@@ -46,7 +47,7 @@ if ($db_found) {
     else if ($utilisateur == "prof")
     {
       
-        $sql = "SELECT mail , mdp FROM professeur";
+        $sql = "SELECT mail , mdp ,nom,prenom FROM professeur";
 
         $result = mysqli_query($db_handle, $sql);
 
@@ -55,6 +56,7 @@ if ($db_found) {
             if(($data["mail"] == $login) && ($data["mdp"] == $password))
             {
                 $_SESSION["adresse_prof"] = $login;
+                $_SESSION["name"] = $data["prenom"]." ".$data["nom"];
                 header('Location: prof.php');
                 exit();
 

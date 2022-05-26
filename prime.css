@@ -77,6 +77,9 @@ body {
     padding-right: 100px;
     display: flex;
     height: 40px;
+    margin-left: 60px;
+    margin-top: 10px;
+
 }
 
 #encadrement_recherche {
@@ -84,6 +87,7 @@ body {
     border-radius: 10px;
     background-color: rgb(43, 42, 40);
     width: 400px;
+    
 
 }
 
@@ -98,7 +102,7 @@ body {
     background-image: linear-gradient(to right, #000C7B 0%, #6F71A3 51%, #7E84F7 100%);
     margin: 10px;
     padding: 15px 45px;
-    text-align: center;s
+    text-align: center;
     text-transform: uppercase;
     background-size: 200% auto;
     color: white;

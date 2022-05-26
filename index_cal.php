@@ -105,7 +105,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'projetweb');
          if($date<date('Y-m-d')){
              $calendar.="<td><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'>N/A</button>";
          }else{
-             $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='book.php?date=".$date."' class='btn btn-success btn-xs'>Book</a>";
+             $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='book.php?mail=".$_GET['mail']."&date=".$date."' class='btn btn-success btn-xs'>Book</a>";
          }
             
             
