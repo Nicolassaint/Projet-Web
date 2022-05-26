@@ -82,6 +82,14 @@ body {
 
 }
 
+#CV {
+
+    padding-right: 100px;
+    height: 100px;
+    margin-top: 10px;
+
+}
+
 #encadrement_recherche {
 
     border-radius: 10px;
