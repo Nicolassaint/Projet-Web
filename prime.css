@@ -153,42 +153,41 @@ body {
 
 }
 .section {
-    border: 2px solid;
+  
     text-align: center;
     padding: 20px;
 }
 
-#conteneur_inter {
+.conteneur_inter {
 
+    justify-content: center;
     border: 2px solid;
     border-radius: 20px;
-    background-color: rgb(79, 132, 79);
-    width: 700px;
-    height: 300px;
+    width: 600px;
+    height: 500px;
 
 }
 
 #image_inter{
-    display: inline-block;
-    padding-right: 50px;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 150px;
+    justify-content: center;
 }
-#texte_inter{
-    display: inline-block;
-    margin-bottom :40px;
+.conteneur_inter b{
+    justify-content: center;
+    display:flex;
+    
 }
 
 #relations_internationales{
 
     border: 2px solid;
-    padding: 30px;
-    padding-left: 320px;
+    
 }
 
 
 .padding_bouton {
-    padding: 100px;
+    justify-content: space-around;
+    display: flex;
 }
 
 
