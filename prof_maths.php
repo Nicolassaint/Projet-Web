@@ -64,11 +64,13 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
                     </form>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </div>
+                    <form>
+                        <button class="btn btn-outline-success" type="submit" formaction = "recherche.php">Search</button>
+                    </form>                </div>
 
-                <button type="button" class="btn btn-outline-light">SE CONNECTER</button>
-            </div>
+                <form action="choix_compte.php" method="post">
+                    <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
+                    </form>            </div>
         </div>
     </nav>
 
@@ -96,7 +98,7 @@ if ($db_found) {
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
             echo "<b>Afficher son CV : </b>"; 
             echo "<br>";
-            echo '<span><a href="lecor.php?nom='. $data['nom'].'">details view</a><span><br>';
+            echo '<span><a href="lecor.php?nom='. $data['nom'].'">Afficher plus</a><span><br>';
             echo'</div>';
             
         }
@@ -121,7 +123,7 @@ if ($db_found) {
         <div>
 
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contactez-nous !</b><br><br>Mail : <a
-                    href="scolarite@omnes.fr">scolarite@omnes.fr</a><br>
+                    href="mailto:scolarite@omnes.fr">scolarite@omnes.fr</a><br>
                 Tél : <a href="01 30 62 78 62">01 30 62 78 62</a></p>
 
         </div>

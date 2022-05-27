@@ -92,8 +92,9 @@ body {
 
 #encadrement_recherche {
 
+    
+    text-align: center;
     border-radius: 10px;
-    background-color: rgb(43, 42, 40);
     width: 400px;
     
 
