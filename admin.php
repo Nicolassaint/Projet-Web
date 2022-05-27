@@ -104,7 +104,7 @@ session_start();
             </div>
         </form>
 
-        <form action="admin_ajout.php" method="post">
+        <form action="admin_ajout.php" method="post" enctype="multipart/form-data">
 
             <div id="ajout_admin" class="admin">
 
