@@ -67,7 +67,63 @@ session_start();
         </div>
     </nav>
 
-<h3>Vous êtes connecté ! </h3>
+    <h2 style ="text-align : center;">Vos Rendez-vous</h2>
+
+<div class="container infos">
+        <img src="info.png" width="250" height="200">
+</div>;
+
+<?php
+    //On reprend ce que l'on a fait au TD/TP6
+    echo "<meta charset=\"UTF-8\">";
+    $database = "projetweb";
+    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_found = mysqli_select_db($db_handle, $database);
+
+?>
+
+<?php
+
+    $date = $_SESSION['jour'];
+    echo $date;
+    $time=$_SESSION['heure'];
+    echo $time;
+    $mail_e=$_SESSION["adresse_client"];
+    echo $mail_e;
+    $mail_p=$_SESSION['mail_prof'];
+    echo $mail_p;
+
+
+//Si la Base de données existe
+if ($db_found) {
+
+$sql = "DELETE FROM rdv WHERE mail_etudiant='$mail_e' and mail_prof='$mail_p' and jour='$date' and heure='$time'";
+$result = mysqli_query($db_handle, $sql);
+
+while ($data = mysqli_fetch_assoc($result)) {
+    echo "<center>";
+
+echo "Mail    : " . $data['mail_prof'] . '<br>';
+echo "Rendez-vous prevu le ".$data['jour']." a ".$data['heure']."a ete annule! <br>";
+
+//echo '<span><a href="annulation.php?mail_etudiant="$mail_e"&mail_prof="$data['mail_prof']"&jour="$data['jour']"&heure="$data['heure']"">Annuler le Rendez-vous</a><span><br>';
+//echo '<span><a href="index_cal.php?mail='.$data['mail'].'">prendre un rdv</a><span><br>';
+
+    echo "</center>";
+
+echo "</table>";
+} 
+}   
+else {
+echo "<br>Database not found";
+}
+//fermer la connexion
+mysqli_close($db_handle);
+?>
+
+
+
+
 <div class="footer">
 
         <div>
