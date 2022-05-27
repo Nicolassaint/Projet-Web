@@ -97,12 +97,18 @@ if ($db_found) {
     echo "Département : " . $data['departement'] . '<br>';
     echo "Burequ : " . $data['salle'] . '<br>';
     echo "Tel : " . $data['tel'] . '<br>';
-    echo "Mail    : " . $data['mail'] . '<br>';
+    echo "Mail    : " . $data['mail'] . '<br><br>';
 
+    $image = $data['nom_image'];
+    $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
+    //echo $sql2;
+    $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
+    $row = mysqli_fetch_array($result2);
     
-    echo '<img src="imageView.php?nom_image='.$data['nom_image'].'"><br>';
+    echo '<img src="data:image/png;base64,' . base64_encode($row["imageData"]) . '"width="7% />';
     
-    echo '<span><a href="index_cal.php?mail='.$data['mail'].'">prendre un rdv</a><span><br>';
+    
+    echo '<span><a href="index_cal.php?mail='.$data['mail'].'"><br><br>prendre un rdv</a><span><br>';
         echo "</center>";
 
     echo "</table>";
