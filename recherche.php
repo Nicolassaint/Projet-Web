@@ -104,7 +104,7 @@ if (($db_found) && ($erreur == "")) {
             echo" <p>Nom : ".$data['nom']."</p>";
         echo"<p>Prenom : ".$data['prenom']."</p>";
         echo"<p>Téléphone: ".$data['tel']."</p>";
-        echo"<p>Mail : ".$data['email']."</p>";
+        echo"<p>Mail : ".$data['mail']."</p>";
        echo"<p>Profession : ".$data['profession']."</p>";
        echo"<p>Bureau : ".$data['salle']."</p>";
        echo"<p>Departement : ".$data['departement']."</p>";
@@ -120,7 +120,7 @@ if (($db_found) && ($erreur == "")) {
             echo" <p>Nom : ".$data['nom']."</p>";
             echo"<p>Prenom : ".$data['prenom']."</p>";
             echo"<p>Téléphone: ".$data['tel']."</p>";
-            echo"<p>Mail : ".$data['email']."</p>";
+            echo"<p>Mail : ".$data['mail']."</p>";
            echo"<p>Profession : ".$data['profession']."</p>";
            echo"<p>Bureau : ".$data['salle']."</p>";
            echo"<p>Departement : ".$data['departement']."</p>";
