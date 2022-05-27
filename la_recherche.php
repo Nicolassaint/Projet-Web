@@ -58,8 +58,9 @@
                     </form>
                 </div>
 
-                <button type="button" class="btn btn-outline-light" formaction = "connexion.php">SE CONNECTER</button>
-            </div>
+                <form action="choix_compte.php" method="post">
+                    <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
+                    </form>            </div>
         </div>
     </nav>
 
@@ -71,8 +72,8 @@
     <form>
             <div id="section_parcourir_recherche"  class="section padding_button">
                 <input type="submit" value="Systèmes intelligents communicants" class="btn btn-outline-light" formaction="syst_int.php">
-                <input type="submit" value="Mathématiques pour l’ingénierie" class="btn btn-outline-light" formction="maths_ing.php">
-                <input type="submit" value="Nanoscience et nanotechnologie pour l’ingénierie" class="btn btn-outline-light" formation="nano.php">
+                <input type="submit" value="Mathématiques pour l’ingénierie" class="btn btn-outline-light" formaction="maths_ing.php">
+                <input type="submit" value="Nanoscience et nanotechnologie pour l’ingénierie" class="btn btn-outline-light" formaction="nano.php">
             </div>
     </form>
 
@@ -91,7 +92,7 @@
         <div>
 
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contactez-nous !</b><br><br>Mail : <a
-                    href="scolarite@omnes.fr">scolarite@omnes.fr</a><br>
+                    href="mailto:scolarite@omnes.fr">scolarite@omnes.fr</a><br>
                 Tél : <a href="01 30 62 78 62">01 30 62 78 62</a></p>
 
         </div>
