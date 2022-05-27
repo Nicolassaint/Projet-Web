@@ -19,7 +19,8 @@ $laboratoire = isset($_POST["laboratoire"])? $_POST["laboratoire"] : "";
 
 
 $xml = new XMLWriter();
-$xml->openUri('cv.xml');
+//$xml->openUri('cv.xml');
+$xml->openUri("$nom.xml");
 $xml->startDocument('1.0', 'utf-8');
 
 $xml->startElement('CV');

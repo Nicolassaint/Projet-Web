@@ -83,7 +83,7 @@
     //Si la Base de données existe
     if ($db_found) {
 
-        $sql = "SELECT nom,prenom,departement,salle,tel,mail,nom_image FROM professeur WHERE nom like '%$_GET[nom]%'";
+        $sql = "SELECT nom,prenom,departement,salle,tel,mail,nom_image,laboratoire FROM professeur WHERE nom like '%$_GET[nom]%'";
         $result = mysqli_query($db_handle, $sql);
 
         while ($data = mysqli_fetch_assoc($result)) {
@@ -104,7 +104,19 @@
                 $row = mysqli_fetch_array($result2);
 
 
-                echo '<img src="data:'.$row["imageType"].';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
+                echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
+            }
+
+            echo "<b>CV</b><br>";
+            $nom = $data['nom'];
+            $chercheur = $data['laboratoire'];
+            $filename = "$nom.xml";
+            $xmlElement = simplexml_load_file($filename);
+            echo "<br>Formations : " . $xmlElement->formations;
+            echo "<br>Expériances : " . $xmlElement->experiances;
+
+            if ($chercheur != "") {
+                echo "<br>Publications : " . $xmlElement->publications;
             }
 
             echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
