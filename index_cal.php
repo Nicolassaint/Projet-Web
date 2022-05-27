@@ -4,6 +4,9 @@ function build_calendar($month, $year) {
 $db_handle = mysqli_connect('localhost', 'root', '' );
 $db_found = mysqli_select_db($db_handle, $database);
 $mysqli = new mysqli('localhost', 'root', '', 'projetweb');
+session_start();
+echo $_SESSION['mail'];
+echo $_SESSION['adresse_mail'];
     /*$stmt = $mysqli->prepare("select * from rdv where MONTH(date) = ? AND YEAR(date) = ?");
     $stmt->bind_param('ss', $month, $year);
     $bookings = array();
@@ -105,7 +108,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'projetweb');
          if($date<date('Y-m-d')){
              $calendar.="<td><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'>N/A</button>";
          }else{
-             $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='book.php?mail=".$_GET['mail']."&date=".$date."' class='btn btn-success btn-xs'>Book</a>";
+             $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='book.php?date=".$date."' class='btn btn-success btn-xs'>Book</a>";
          }
             
             

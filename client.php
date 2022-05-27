@@ -43,7 +43,7 @@ session_start();
 
         <div id="navigation_admin">
 
-            <a href="index.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
+            <a href="page.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
             <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
             <input type="button" value="Coordonnées" class="bouton_accueil" id="coordonnées">
             <a href="chat.php"><input type="button" value="Communication" class="bouton_accueil" id="communication"></a>

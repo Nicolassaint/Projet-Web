@@ -25,6 +25,7 @@
     $database = "projetweb";
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
+    session_start();
 
 ?>
 </head>
@@ -97,7 +98,9 @@ if ($db_found) {
     echo "Tel : " . $data['tel'] . '<br>';
     echo "Mail    : " . $data['mail'] . '<br>';
     echo "<img src='" . $data['nom'] .".jpg'>". '<br>';
-    echo '<span><a href="index_cal.php?mail='.$data['mail'].'">prendre un rdv</a><span><br>';
+    $_SESSION['mail']=$data['mail'];
+    echo '<span><a href="index_cal.php">prendre un rdv</a><span><br>';
+    //echo '<span><a href="index_cal.php?mail='.$data['mail'].'">prendre un rdv</a><span><br>';
         echo "</center>";
 
     echo "</table>";
