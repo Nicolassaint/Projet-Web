@@ -71,8 +71,8 @@
     <form>
             <div id="section_parcourir_recherche"  class="section padding_button">
                 <input type="submit" value="Systèmes intelligents communicants" class="btn btn-outline-light" formaction="syst_int.php">
-                <input type="submit" value="Mathématiques pour l’ingénierie" class="btn btn-outline-light" formction="maths_ing.php">
-                <input type="submit" value="Nanoscience et nanotechnologie pour l’ingénierie" class="btn btn-outline-light" formation="nano.php">
+                <input type="submit" value="Mathématiques pour l’ingénierie" class="btn btn-outline-light" formaction="maths_ing.php">
+                <input type="submit" value="Nanoscience et nanotechnologie pour l’ingénierie" class="btn btn-outline-light" formaction="nano.php">
             </div>
     </form>
 
