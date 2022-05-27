@@ -17,9 +17,10 @@ $salle = isset($_POST["salle"])? $_POST["salle"] : "";
 $departement = isset($_POST["departement"])? $_POST["departement"] : "";
 $laboratoire = isset($_POST["laboratoire"])? $_POST["laboratoire"] : "";
 
-/*
+
 $xml = new XMLWriter();
-$xml->openUri('cv.xml');
+//$xml->openUri('cv.xml');
+$xml->openUri("$nom.xml");
 $xml->startDocument('1.0', 'utf-8');
 
 $xml->startElement('CV');
@@ -39,7 +40,10 @@ $xml->writeCdata("$publications");
 $xml->endElement();
 }
 
-$xml->endElement(); */
+$xml->endElement(); 
+$xml->flush(); 
+
+
 
 
 
