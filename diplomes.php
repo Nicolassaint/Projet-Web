@@ -63,10 +63,13 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
                     </form>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </div>
-
-                <button type="button" class="btn btn-outline-light">SE CONNECTER</button>
+                    
+                    <form>
+                        <button class="btn btn-outline-success" type="submit" formaction = "recherche.php">Search</button>
+                    </form>                </div>
+                <form action="choix_compte.php" method="post">
+                    <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
+                    </form>
             </div>
         </div>
     </nav>
@@ -86,9 +89,8 @@ if ($db_found) {
         
 
         while ($data = mysqli_fetch_assoc($result)) {
-            echo '<div class="container infos">
-            <img src="nos services.png" width="250" height="200">
-        </div>';
+            echo '<div class="container infos">';
+            echo "<img src='" . $data['univ'] .".jpg' width='250' height='200'>". '<br>';
 
             echo '<div class = "relations_internationales">';
                        
@@ -119,7 +121,7 @@ if ($db_found) {
         <div>
 
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contactez-nous !</b><br><br>Mail : <a
-                    href="scolarite@omnes.fr">scolarite@omnes.fr</a><br>
+                    href="mailto:scolarite@omnes.fr">scolarite@omnes.fr</a><br>
                 Tél : <a href="01 30 62 78 62">01 30 62 78 62</a></p>
 
         </div>

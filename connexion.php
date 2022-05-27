@@ -15,6 +15,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 $utilisateur = "";
 $utilisateur = $_SESSION["type_utilisateur"];
+$_SESSION["adresse_mail"] = $login;
 
  //si le BDD existe, faire le traitement
 if ($db_found) {

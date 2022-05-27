@@ -46,8 +46,13 @@
 
                 </ul>
                 <div id="barre_recherche">
-                    <form role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form role="search" action="recherche.php" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            name="recherche">
+
+                        <form>
+                        <button class="btn btn-outline-success" type="submit" formaction = "recherche.php">Search</button>
+                    </form>
                     </form>
 
                     <form>
@@ -55,6 +60,15 @@
                     </form>
 
                 </div>
+                <!-- le bouton connexion ne marche toujours pas jsp quel fichier il faut appeler d'ici -->
+                <form action="choix_compte.php" method="post">
+                    <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
+                    </form>
+            </div>
+            
+            <form action="choix_compte.php" method="post">
+                <input type="submit" class="btn btn-outline-light" value="S">
+                </form>
 
                 <form>
                 <button class="btn btn-outline-light" type="button" formaction="connexion.php">SE CONNECTER</button>

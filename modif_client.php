@@ -1,6 +1,31 @@
+<?php
+
+session_start(); 
+
+?>
+
+<!DOCTYPE html>
+
 <head>
+    <link href="prime.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+        
+
+            $("#modif_client").hide();
+
+            $("#coordonnées").click(function () {
+                $("#modif_client").show();
+            });
+        
+        });
+
+
+    </script>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
@@ -28,22 +53,22 @@
                         <a class="nav-link active" aria-current="page" href="page.html">ACCUEIL
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="page.html" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            TOUT PARCOURIR
+                    
+                    
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">DOSSIER
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="enseignements.php">L'ENSEIGNEMENT</a></li>
-                            <li><a class="dropdown-item" href="la_recherche.php">LA RECHERCHE</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="relations_inter.php">RELATION INTERNATIONALE</a></li>
-                        </ul>
-                    </li>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">INFORMATION
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="chat.php">COMMUNICATION
+                        </a>
+                        </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">PRENDRE UN RENDEZ-VOUS
+                        <a class="nav-link active" aria-current="page" href="client_infos.php">VOTRE COMPTE
                         </a>
                     </li>
 
@@ -53,31 +78,35 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
                     </form>
-                    <form>
-                        <button class="btn btn-outline-success" type="submit" formaction = "recherche.php">Search</button>
-                    </form>                </div>
+                </div>
 
                 <form action="choix_compte.php" method="post">
                     <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
                     </form>            </div>
         </div>
     </nav>
-
-    <div class="container infos">
-        <img src="enseignement.png" width="270" height="200">
-    </div>
-
+        <div style = "text-align : center">
+    <h3> Modifier vos informations </h3>
     
-    <form action="type_utilisateur.php" method="post">
-            <div id="section_enseignement" class="section padding_button">
-                <input type="submit" value="Etudiant" class="btn btn-outline-light" name="bouton_client">
-                <input type="submit" value="Employé" class="btn btn-outline-light" name="bouton_prof">
-                <input type="submit" value="Administrateur" class="btn btn-outline-light" name="bouton_admin">
-            </div>
-    </form>
 
+                <div id="section" >
+                    
+                    <input type="text" placeholder="Adresse ligne 1" id="barre_recherche" name="adresse1">
+                    <input type="text" placeholder="Adresse ligne 2" id="barre_recherche" name="adresse2">
+                    <input type="text" placeholder="Ville" id="barre_recherche" name="ville">
+                    <input type="text" placeholder="Code postal" id="barre_recherche" name="code_postal">
+                    <input type="text" placeholder="Pays" id="barre_recherche" name="pays">
+                    <input type="text" placeholder="Numéro de téléphone" id="barre_recherche" name="telephone">
+                    <input type="text" placeholder="Carte étudiante" id="barre_recherche" name="carte_etudiante">
+                    <form>
+                    <input type="submit" value="Modifier" class="bouton_recherche" formaction = client_modif_infos.php>
+                    </form>
+                </div>  
+                </div>  
 
-    <div class="footer">
+</body>
+
+<div class="footer">
 
         <div>
             <p> 37 Quai Grenelle, 75015 Paris </p>
