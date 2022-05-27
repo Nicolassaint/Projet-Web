@@ -3,25 +3,7 @@
 <head>
     <link href="prime.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <?php
-    $recherche = isset($_POST["recherche"]) ? $_POST["recherche"] : "";
-
-//identifier le nom de base de données
-$database = "projetweb";
-//connectez-vous dans votre BDD
-
-$db_handle = mysqli_connect('localhost', 'root', '');
-$db_found = mysqli_select_db($db_handle, $database);
-
-
-$erreur = "";
-
-if ($recherche == "") {
-    $erreur = "Le champ Nom est vide";
-}
-
-
-?>
+   
 
     <!-- Required meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -86,6 +68,22 @@ if ($recherche == "") {
         <div style = "text-align : center">
     <h3> Résultats de votre recherche </h3>
     <?php
+
+$recherche = isset($_POST["recherche"]) ? $_POST["recherche"] : "";
+
+//identifier le nom de base de données
+$database = "projetweb";
+//connectez-vous dans votre BDD
+
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+
+
+$erreur = "";
+
+if ($recherche == "") {
+    $erreur = "Le champ Nom est vide";
+}
 
     //si le BDD existe, faire le traitement
 if (($db_found) && ($erreur == "")) {
