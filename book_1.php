@@ -9,24 +9,24 @@
     $db_found = mysqli_select_db($db_handle, $database);
     //include 'index_cal.php';
    // include 'book.php';
-    echo $date = $_GET['date'];
-    echo $ts=$_GET['time'];
-    echo $mail = $_GET['mail'];
-    //echo $mail_e=$_SESSION["adresse_mail"];
+    $date = $_GET['date'];
+    $ts=$_GET['time'];
+    $mail = $_SESSION["mail"];
+    $mail_e=$_SESSION["adresse_mail"];
 
 
 //Si la Base de données existe
 if ($db_found) {
    
-    $sql = "INSERT INTO `rdv` (`adresse`, `mail_etudiant`, `mail_prof`, `jour`, `heure`, `infos_sup`) VALUES ('', '', '$mail', '$date', '$ts', '')";
+    $sql = "INSERT INTO `rdv` (`mail_etudiant`, `mail_prof`, `jour`, `heure`) VALUES ('$mail_e', '$mail', '$date', '$ts')";
     $result = mysqli_query($db_handle, $sql);
     //echo $sql;
     //while ($data = mysqli_fetch_assoc($result)) {
-    //echo "prenom : ";
-
+    echo "Votre adresse mail : ". $mail_e."<br>";
+    echo "Adresse mail du professeur: ". $mail."<br>";
     //echo "date    : " . $data['jour'] . '<br>';
     echo "date : " . $date . '<br>';
-    echo "timeslot : " . $ts . '<br>';
+    echo "heure : " . $ts . '<br>';
 
 
     echo "</table>";

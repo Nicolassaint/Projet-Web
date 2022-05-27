@@ -3,10 +3,16 @@
     $database = "projetweb";
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
-if(isset($_GET['jour'])){
+    session_start();
+    
 
-    $date = $_GET['jour'];
-    $stmt = $mysqli->prepare("select * from rdv where date = ?");
+if(isset($_GET['date'])){
+
+    $mail=$_SESSION['mail'];
+    $mail_e=$_SESSION['adresse_mail'];
+
+    $date = $_GET['date'];
+    $stmt = $mysqli->prepare("select * from rdv where jour = ? and mail_prof='$mail'");
     $stmt->bind_param('s', $date);
     $bookings = array();
     if($stmt->execute()){
@@ -21,20 +27,26 @@ if(isset($_GET['jour'])){
     }
 }
 
-/*
+if(isset($_POST['submit'])){
+
+    $mail=$_SESSION['mail'];
+    $mail_e=$_SESSION['adresse_mail'];
+
     $sql = "SELECT * from rdv";
     $result = mysqli_query($mysqli, $sql);
  
-    $stmt = $mysqli->prepare("select * from rdv where jour= ? and heure= :heure");
+    $stmt = $mysqli->prepare("select * from rdv where jour= ? and heure= ? and mail_prof='$mail'");
+    
+    $timeslot = $_POST['timeslot'];
     $stmt->bind_param('ss', $date, $timeslot);
-    //$bookings = array();
+    $bookings = array();
     if($stmt->execute()){
         $result = $stmt->get_result();
         if($result->num_rows>0){
             $msg = "<div class='alert alert-danger'>Booked already</div>";
             }else{
-                $stmt = $mysqli->prepare("INSERT INTO rdv (adresse, mail_etudiant, mail_prof, jour, heure, infos_sup) VALUES ('','','',?,?,'')");
-    $stmt->bind_param('ss', $date, $timeslot);
+                $stmt = $mysqli->prepare("INSERT INTO rdv (mail_etudiant, mail_prof, jour, heure) VALUES (?,?,?,?)");
+    $stmt->bind_param('ssss', $mail_e, $mail, $date, $timeslot);
     $stmt->execute();
     $msg = "<div class='alert alert-success'>Booking Successfull</div>";
     $bookings[]=$timeslot;
@@ -43,8 +55,7 @@ if(isset($_GET['jour'])){
 
         }
     }
-*/
-
+}
 
 $duration = 15;
 $cleanup = 0;
@@ -95,40 +106,24 @@ function timeslots($duration, $cleanup, $start, $end){
                 <?php echo(isset($msg))?$msg:""; ?>
             </div>
                 <?php 
-                    $database = "projetweb";
-                    $db_handle = mysqli_connect('localhost', 'root', '');
-                    $db_found = mysqli_select_db($db_handle, $database);
-                    $jour=$_GET['date'];
-                    if($db_found){
-                        $sql = "SELECT heure from rdv";
-                        $sql_jour ="SELECT jour from rdv";
-                        $result = mysqli_query($db_handle, $sql);
-                        $result_jour = mysqli_query($db_handle, $sql_jour);
-                      //  echo "hellloo";
-                    $timeslots = timeslots($duration, $cleanup, $start, $end); 
-                   // while( $data_jour=mysqli_fetch_array($result_jour)){
-                     //  while($data=mysqli_fetch_assoc($result)){
+                      $timeslots = timeslots($duration, $cleanup, $start, $end);
                         foreach($timeslots as $ts){
                     ?>
                         <div class="col-md-2">
                             <div class="form-group">
-                               <?php 
-                                  // echo "jour : ".$jour." et le jour:".$data['jour'];
-                                 // echo $jour;
-                                 // echo "jour: ".$data_jour['jour'];
-                                  
-                                          //  if(($jour === $data_jour['jour'])){
-                                          //      echo '<td><span><a class="btn btn-danger book">'.$ts.'</a><span></td>';
-                                          //  }else{
-                                                echo '<td><span><a class="btn btn-success book" href="book_1.php?mail='.$_GET['mail'].'&date='.$_GET['date'].'&time='.$ts.'">'.$ts.'</a><span></td>';?>
-                                        <?php// }      
-                                  ?>   
+                            <?php
+                             if(in_array($ts, $bookings))
+                             { ?>
+                             <button class="btn btn-danger book"><?php echo $ts; ?></button>
+                             <?php
+                              }
+                              else
+                              { ?>
+                             <button class="btn btn-success book" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?></button>
+                             <?php }  ?>  
                             </div>
                         </div>
-                    <?php 
-                        }
-                    }  
-                 ?>
+                    <?php  } ?>
         </div>
     </div>
     <div id="myModal" class="modal fade" role="dialog">
@@ -136,7 +131,7 @@ function timeslots($duration, $cleanup, $start, $end){
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Booking for: <span id="slot"></span></h4>
+                    <h4 class="modal-title">Booking for: <span><?php echo $date;?></span></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -152,7 +147,7 @@ function timeslots($duration, $cleanup, $start, $end){
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input required type="email_etudiant" class="form-control" name="email_etudiant">
+                                    <p><?php echo $mail_e ?></p>
                                 </div>
                                 <div class="form-group pull-right">
                                     <button name="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -167,18 +162,19 @@ function timeslots($duration, $cleanup, $start, $end){
         </div>
     </div>
 
-    <script>
-        
-    $(".book").click(function(){
-    var timeslot = $(this).attr('data-timeslot');
-    $("#slot").html(timeslot);
-    $("#timeslot").val(timeslot);
-    $("#myModal").modal("show");
-});
-</script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
+    <script>
+        
+        $(".book").click(function(){
+        var timeslot = $(this).attr('data-timeslot');
+        $("#slot").html(timeslot);
+        $("#timeslot").val(timeslot);
+        $("#myModal").modal("show");
+    })
+    </script>
+    
+
+</body>
 
 </html>
