@@ -1,6 +1,10 @@
-<?php
+<!DOCTYPE html>
 
-$recherche = isset($_POST["recherche"]) ? $_POST["recherche"] : "";
+<head>
+    <link href="prime.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <?php
+    $recherche = isset($_POST["recherche"]) ? $_POST["recherche"] : "";
 
 //identifier le nom de base de données
 $database = "projetweb";
@@ -17,8 +21,73 @@ if ($recherche == "") {
 }
 
 
+?>
 
-//si le BDD existe, faire le traitement
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="prime.css" rel="stylesheet" type="text/css" />
+
+    <!--javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg">
+        <div class="container-fluid bar">
+            <a class="navbar-brand" href="#"><img src="omnes_logo.png" id="droite" alt="omnes_logo" width="300"
+                    height="100"></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="page.html">ACCUEIL
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">DOSSIER
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">INFORMATION
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="chat.php">COMMUNICATION
+                        </a>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="client_infos.php">VOTRE COMPTE
+                        </a>
+                    </li>
+
+                </ul>
+                <div id="barre_recherche">
+                    <form role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    </form>
+                </div>
+
+                <form action="choix_compte.php" method="post">
+                    <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
+                    </form>            </div>
+        </div>
+    </nav>
+        <div style = "text-align : center">
+    <h3> Résultats de votre recherche </h3>
+    <?php
+
+    //si le BDD existe, faire le traitement
 if (($db_found) && ($erreur == "")) {
 
     $sql = "SELECT * from professeur WHERE nom = '$recherche'";
@@ -29,131 +98,129 @@ if (($db_found) && ($erreur == "")) {
     $result = mysqli_query($db_handle, $sql);
 
     if (mysqli_num_rows($result)>0) {
-        echo "<table border=\"1\">";
-        echo "<tr>";
-        echo "<th>" . "Nom" . "</th>";
-        echo "<th>" . "Prenom" . "</th>";
-        echo "<th>" . "Téléphone" . "</th>";
-        echo "<th>" . "mail" . "</th>";
-        echo "<th>" . "Photo" . "</th>";
-        echo "<th>" . "Profession" . "</th>";
-        echo "<th>" . "Salle" . "</th>";
-        echo "<th>" . "Departement" . "</th>";
-        echo "<th>" . "Laboratoire" . "</th>";
+        
+        
 
-        echo "</tr>";
+        
         while ($data = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td>" . $data['nom'] . "</td>";
-            echo "<td>" . $data['prenom'] . "</td>";
-            echo "<td>" . $data['tel'] . "</td>";
-            echo "<td>" . $data['mail'] . "</td>";
-            echo "<td>" . $data['photo'] . "</td>";
-            echo "<td>" . $data['profession'] . "</td>";
-            echo "<td>" . $data['departement'] . "</td>";
-            echo "<td>" . $data['laboratoire'] . "</td>";
-            echo "</tr>";
+            echo" <p>Nom : ".$data['nom']."</p>";
+        echo"<p>Prenom : ".$data['prenom']."</p>";
+        echo"<p>Téléphone: ".$data['tel']."</p>";
+        echo"<p>Mail : ".$data['email']."</p>";
+       echo"<p>Profession : ".$data['profession']."</p>";
+       echo"<p>Bureau : ".$data['salle']."</p>";
+       echo"<p>Departement : ".$data['departement']."</p>";
+       echo"<p>Laboratoire : ".$data['laboratoire']."</p>";
         }
-        echo "</table>";
     }
 
     $result2 = mysqli_query($db_handle, $sql2);
 
     if (mysqli_num_rows($result2)>0) {
-        echo "<table border=\"1\">";
-        echo "<tr>";
-        echo "<th>" . "Nom" . "</th>";
-        echo "<th>" . "Prenom" . "</th>";
-        echo "<th>" . "Téléphone" . "</th>";
-        echo "<th>" . "mail" . "</th>";
-        echo "<th>" . "Photo" . "</th>";
-        echo "<th>" . "Profession" . "</th>";
-        echo "<th>" . "Salle" . "</th>";
-        echo "<th>" . "Departement" . "</th>";
-        echo "<th>" . "Laboratoire" . "</th>";
-
-        echo "</tr>";
+        
         while ($data = mysqli_fetch_assoc($result2)) {
-            echo "<tr>";
-            echo "<td>" . $data['nom'] . "</td>";
-            echo "<td>" . $data['prenom'] . "</td>";
-            echo "<td>" . $data['tel'] . "</td>";
-            echo "<td>" . $data['mail'] . "</td>";
-            echo "<td>" . $data['photo'] . "</td>";
-            echo "<td>" . $data['profession'] . "</td>";
-            echo "<td>" . $data['departement'] . "</td>";
-            echo "<td>" . $data['laboratoire'] . "</td>";
-            echo "</tr>";
+            echo" <p>Nom : ".$data['nom']."</p>";
+            echo"<p>Prenom : ".$data['prenom']."</p>";
+            echo"<p>Téléphone: ".$data['tel']."</p>";
+            echo"<p>Mail : ".$data['email']."</p>";
+           echo"<p>Profession : ".$data['profession']."</p>";
+           echo"<p>Bureau : ".$data['salle']."</p>";
+           echo"<p>Departement : ".$data['departement']."</p>";
+           echo"<p>Laboratoire : ".$data['laboratoire']."</p>";
         }
-        echo "</table>";
     }
 
     
     $result3 = mysqli_query($db_handle, $sql3);
 
     if (mysqli_num_rows($result3)>0) {
-        echo "<table border=\"1\">";
-        echo "<tr>";
-        echo "<th>" . "Nom de l'établissement" . "</th>";
-        echo "<th>" . "Adresse" . "</th>";
-        echo "<th>" . "Contact" . "</th>";
-        echo "</tr>";
-
+        
         while ($data = mysqli_fetch_assoc($result3)) {
-            echo "<tr>";
-            echo "<td>" . $data['nom'] . "</td>";
-            echo "<td>" . $data['adresse'] . "</td>";
-            echo "<td>" . $data['contact'] . "</td>";
-            echo "</tr>";
+            
+            echo" <p>Nom de l'établissement: ".$data['nom']."</p>";
+            echo"<p>Adresse : ".$data['adresse']."</p>";
+            echo"<p>Contact: ".$data['contact']."</p>";
+        
         }
-        echo "</table>";
     }
 
     $result4 = mysqli_query($db_handle, $sql4);
 
     if (mysqli_num_rows($result4)>0) {
-        echo "<table border=\"1\">";
-        echo "<tr>";
-        echo "<th>" . "Nom" . "</th>";
-        echo "<th>" . "Prenom" . "</th>";
-        echo "<th>" . "Téléphone" . "</th>";
-        echo "<th>" . "mail" . "</th>";
-        echo "<th>" . "Photo" . "</th>";
-        echo "<th>" . "Profession" . "</th>";
-        echo "<th>" . "Salle" . "</th>";
-        echo "<th>" . "Departement" . "</th>";
-        echo "<th>" . "Laboratoire" . "</th>";
+        
 
-        echo "</tr>";
+   
         while ($data = mysqli_fetch_assoc($result4)) {
-            echo "<tr>";
-            echo "<td>" . $data['nom'] . "</td>";
-            echo "<td>" . $data['prenom'] . "</td>";
-            echo "<td>" . $data['tel'] . "</td>";
-            echo "<td>" . $data['mail'] . "</td>";
-            echo "<td>" . $data['photo'] . "</td>";
-            echo "<td>" . $data['profession'] . "</td>";
-            echo "<td>" . $data['departement'] . "</td>";
-            echo "<td>" . $data['laboratoire'] . "</td>";
-            echo "</tr>";
+            echo" <p>Nom : ".$data['nom']."</p>";
+            echo"<p>Prenom : ".$data['prenom']."</p>";
+            echo"<p>Téléphone: ".$data['tel']."</p>";
+            echo"<p>Mail : ".$data['email']."</p>";
+           echo"<p>Profession : ".$data['profession']."</p>";
+           echo"<p>Bureau : ".$data['salle']."</p>";
+           echo"<p>Departement : ".$data['departement']."</p>";
+           echo"<p>Laboratoire : ".$data['laboratoire']."</p>";
         }
-        echo "</table>";
 
 
     }
 
     if((mysqli_num_rows($result)==0) && (mysqli_num_rows($result2)==0) && (mysqli_num_rows($result3)==0) && (mysqli_num_rows($result4)==0))
 {
-    echo "Aucun résultat trouvé pour : ".$recherche." !";
+    echo "<p>Aucun résultat trouvé pour : ".$recherche." !</p>";
 }
 }
 else{
 
-    echo "Vous devez rentrer quelque chose !";
+    echo "<p>Vous devez rentrer quelque chose !</p>";
 
 
 }
-
-
-
 ?>
+
+ 
+<div class="footer">
+
+<div>
+    <p> 37 Quai Grenelle, 75015 Paris </p>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.369423144615!2d2.2842394155508656!3d48.85116550916967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e670049543178d%3A0x400dcd31a8b1ba2a!2s43%20Quai%20de%20Grenelle%2C%2075015%20Paris!5e0!3m2!1sen!2sfr!4v1653224205532!5m2!1sen!2sfr"
+        width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
+</div>
+
+<div>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contactez-nous !</b><br><br>Mail : <a
+            href="mailto:scolarite@omnes.fr">scolarite@omnes.fr</a><br>
+        Tél : <a href="01 30 62 78 62">01 30 62 78 62</a></p>
+
+</div>
+
+<div>
+
+    <p>
+        Site créé par :
+        <li>Lise CHANTHAPHASOUK</li>
+        <li>Louise Poirey </li>
+        <li>Nicolas Saint</li>
+        <li>Roy Sfeir</li>
+        <li>TD06 - ING3</li>
+
+    </p>
+
+</div>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
