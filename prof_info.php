@@ -96,9 +96,8 @@ if ($db_found) {
         
                        
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-            echo "<b>Afficher son CV : </b>"; 
-            echo "<br>";
             echo '<span><a href="segado.php?nom='. $data['nom'].'">Afficher plus</a><span><br>';
+            echo "<br>";
             echo'</div>';
             
         }

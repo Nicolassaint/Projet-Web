@@ -70,11 +70,11 @@ $type=$_SESSION['profession'];
             $duration = 30;
             $cleanup = 0;
             $start = "13:00";
-            $end = "17:00"; 
+            $end = "17:30"; 
             }else{
             $duration = 30;
             $cleanup = 0;
-            $start = "10:00";
+            $start = "8:30";
             $end = "14:00";
             }
         }elseif($jour=="tuesday" || $jour=="thursday"){

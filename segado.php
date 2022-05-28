@@ -100,16 +100,17 @@
             $image = "";
             $image = $data['nom_image'];
 
+            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
+
             if ($image != "") {
                 $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
                 $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
                 $row = mysqli_fetch_array($result2);
 
-
-                //echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
+                echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
+               
             }
 
-            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
 
             echo "<b>CV</b><br>";
             $nom = $data['nom'];

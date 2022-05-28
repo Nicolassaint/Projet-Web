@@ -83,7 +83,7 @@
     //si le BDD existe, faire le traitement
 if ($db_found) {
 
-    $sql = "SELECT nom FROM professeur WHERE departement like '%Informatique%'";
+    $sql = "SELECT nom FROM professeur WHERE profession like '%chercheur%' and laboratoire like '%nano%'";
 
     $result = mysqli_query($db_handle, $sql);
 
@@ -94,9 +94,8 @@ if ($db_found) {
         
                        
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-            echo "<b>Afficher son CV : </b>"; 
-            echo "<br>";
             echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
+            echo "<br>";
             echo'</div>';
             
         }

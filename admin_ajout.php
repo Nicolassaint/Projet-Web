@@ -79,7 +79,7 @@ if ($db_found) {
         $sql = "INSERT INTO professeur VALUES('$nom','$prenom','$telephone','$mail','$password','$imageName','$profession','$salle','$departement','$laboratoire')";
         $result = mysqli_query($db_handle, $sql);
         echo "Employé ajouté avec succès !";
-        //echo $sql;
+        echo $sql;
  
 }
 
