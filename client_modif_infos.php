@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $adresse1 = isset($_POST["adresse1"])? $_POST["adresse1"] : "";
 $adresse2 = isset($_POST["adresse2"])? $_POST["adresse2"] : "";
 $ville = isset($_POST["ville"])? $_POST["ville"] : "";
@@ -28,10 +30,7 @@ if ($db_found) {
         echo "<br><b>Modification réalisée avec succès </b><br><br>";
 
         echo $sql;
-        echo "<br><br>salle : ".$salle;
-        echo "<br>telephone : ".$telephone;
-        echo "<br>mail : ".$mail;
-        echo "</div>";
+        
 
          
 }

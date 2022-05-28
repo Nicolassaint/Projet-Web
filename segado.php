@@ -109,6 +109,8 @@
                 //echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
             }
 
+            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
+
             echo "<b>CV</b><br>";
             $nom = $data['nom'];
             $chercheur = $data['laboratoire'];
@@ -121,7 +123,6 @@
                 echo "<br>Publications : " . $xmlElement->publications;
             }
 
-            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
             echo "</center>";
 
             echo "</table>";

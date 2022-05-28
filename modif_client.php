@@ -89,8 +89,9 @@ session_start();
     <h3> Modifier vos informations </h3>
     
 
-                <div id="section" >
-                    
+                
+                 <form action="client_modif_infos.php" method="post">
+                 <div id="section" >
                     <input type="text" placeholder="Adresse ligne 1" id="barre_recherche" name="adresse1">
                     <input type="text" placeholder="Adresse ligne 2" id="barre_recherche" name="adresse2">
                     <input type="text" placeholder="Ville" id="barre_recherche" name="ville">
@@ -98,9 +99,9 @@ session_start();
                     <input type="text" placeholder="Pays" id="barre_recherche" name="pays">
                     <input type="text" placeholder="Numéro de téléphone" id="barre_recherche" name="telephone">
                     <input type="text" placeholder="Carte étudiante" id="barre_recherche" name="carte_etudiante">
-                    <form>
-                    <input type="submit" value="Modifier" class="bouton_recherche" formaction = client_modif_infos.php>
-                    </form>
+                    
+                    <input type="submit" value="Modifier" class="bouton_recherche">
+                </form>
                 </div>  
                 </div>  
 

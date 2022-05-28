@@ -27,6 +27,10 @@ session_start();
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  
 </head>
 
 <body>
@@ -99,7 +103,13 @@ session_start();
 
             </p>
 
-
+            <a href="page.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
+            <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
+            <a href="modif_client.php"><input type="button" value="Coordonnées" class="bouton_accueil" id="coordonnées"></a>
+            <a href="chat.php"><input type="button" value="Communication" class="bouton_accueil" id="communication"></a>
+            <form action="client_infos.php" method="POST">
+                <input type="submit" value="Votre compte" class="bouton_accueil" id="votre_compte">
+            </form>
         </div>
 
 

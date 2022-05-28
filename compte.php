@@ -48,7 +48,6 @@
                     <i class="fas fa-lock"></i>
                     <input placeholder="Mot de Passe" type="password" class="input" name="password">
                 </div>
-                <a href="#" class="link">Mot de passe oublié ?</a>
                 <button class="btn" type="submit">Connexion</button>
             </form>
         </div>
