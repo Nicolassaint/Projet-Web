@@ -76,14 +76,14 @@
 
     <div class="container infos">
             <img src="SIC.png" width="250" height="200">
-    </div>;
+    </div>
 
    
     <?php
     //si le BDD existe, faire le traitement
 if ($db_found) {
 
-    $sql = "SELECT nom FROM professeur WHERE departement like '%Informatique%'";
+    $sql = "SELECT * FROM professeur WHERE laboratoire like '%Intelligents%'";
 
     $result = mysqli_query($db_handle, $sql);
 
@@ -94,9 +94,12 @@ if ($db_found) {
         
                        
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-            echo "<b>Afficher son CV : </b>"; 
+            echo "<b>Prenom : </b> " . $data['prenom'] ."<br>";
+            echo "<b>email : </b> " . $data['mail'] ."<br>";
+            //echo "<b> Photo : </b> " . $data['nom_image'] ."<br>";
+            echo "<b>Salle : </b> " . $data['salle'] ."<br>";
             echo "<br>";
-            echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
+            //echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
             echo'</div>';
             
         }
