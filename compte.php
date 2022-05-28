@@ -25,6 +25,20 @@
                 $("#connexion").hide();
 
             }
+            
+            var check = '<?php echo $_SESSION["connexion_test"]; ?>';
+
+            if(check == "incorrect")
+            {
+                alert("Mot de passe ou login incorrect !");
+            }
+
+            $("#retour").click(function () {
+                
+                <?php $_SESSION["connexion_test"] = "correct";  ?>
+                location.href = 'choix_compte.php';
+        
+            });
         });
 
     </script>
@@ -48,6 +62,7 @@
                     <i class="fas fa-lock"></i>
                     <input placeholder="Mot de Passe" type="password" class="input" name="password">
                 </div>
+                <a class="link" id="retour">Retour</a>
                 <button class="btn" type="submit">Connexion</button>
             </form>
         </div>
