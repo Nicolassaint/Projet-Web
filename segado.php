@@ -75,8 +75,10 @@
 
     <div class="container infos">
         <img src="info.png" width="250" height="200">
-    </div>;
+    </div>
 
+
+    <div class="section">
 
     <?php
 
@@ -87,28 +89,25 @@
         $result = mysqli_query($db_handle, $sql);
 
         while ($data = mysqli_fetch_assoc($result)) {
-            echo "<center>";
             echo "Prénom : " . $data['prenom'] . '<br>';
             echo "Nom : " . $data['nom'] . '<br>';
             echo "Département : " . $data['departement'] . '<br>';
             echo "Burequ : " . $data['salle'] . '<br>';
             echo "Tel : " . $data['tel'] . '<br>';
             echo "Mail    : " . $data['mail'] . '<br><br>';
-            
-            $_SESSION['profession']=$data['profession'];
-            $_SESSION['mail']=$data['mail'];
+
+            $_SESSION['profession'] = $data['profession'];
+            $_SESSION['mail'] = $data['mail'];
             $image = "";
             $image = $data['nom_image'];
 
             echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
-
             if ($image != "") {
                 $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
                 $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
                 $row = mysqli_fetch_array($result2);
 
-                echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
-               
+                //echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
             }
 
 
@@ -124,9 +123,6 @@
                 echo "<br>Publications : " . $xmlElement->publications;
             }
 
-            echo "</center>";
-
-            echo "</table>";
         }
     } else {
         echo "<br>Database not found";
@@ -134,6 +130,7 @@
     //fermer la connexion
     mysqli_close($db_handle);
     ?>
+    </div>
 
 
 
