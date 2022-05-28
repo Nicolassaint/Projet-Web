@@ -94,7 +94,8 @@
             echo "Burequ : " . $data['salle'] . '<br>';
             echo "Tel : " . $data['tel'] . '<br>';
             echo "Mail    : " . $data['mail'] . '<br><br>';
-
+            $_SESSION['profession']=$data['profession'];
+            $_SESSION['mail']=$data['mail'];
             $image = "";
             $image = $data['nom_image'];
 

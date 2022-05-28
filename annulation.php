@@ -27,22 +27,6 @@ session_start();
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <script>
-
-        $(document).ready(function () {
-        
-
-            $("#modif_client").hide();
-
-            $("#coordonnées").click(function () {
-                $("#modif_client").show();
-            });
-        
-        });
-    </script>
 </head>
 
 <body>
@@ -83,7 +67,63 @@ session_start();
         </div>
     </nav>
 
-<h3>Vous êtes connecté ! </h3>
+    <h2 style ="text-align : center;">Vos Rendez-vous</h2>
+
+<div class="container infos">
+        <img src="info.png" width="250" height="200">
+</div>;
+
+<?php
+    //On reprend ce que l'on a fait au TD/TP6
+    echo "<meta charset=\"UTF-8\">";
+    $database = "projetweb";
+    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_found = mysqli_select_db($db_handle, $database);
+
+?>
+
+<?php
+
+    $date = $_SESSION['jour'];
+    echo $date;
+    $time=$_SESSION['heure'];
+    echo $time;
+    $mail_e=$_SESSION["adresse_client"];
+    echo $mail_e;
+    $mail_p=$_SESSION['mail_prof'];
+    echo $mail_p;
+
+
+//Si la Base de données existe
+if ($db_found) {
+
+$sql = "DELETE FROM rdv WHERE mail_etudiant='$mail_e' and mail_prof='$mail_p' and jour='$date' and heure='$time'";
+$result = mysqli_query($db_handle, $sql);
+
+while ($data = mysqli_fetch_assoc($result)) {
+    echo "<center>";
+
+echo "Mail    : " . $data['mail_prof'] . '<br>';
+echo "Rendez-vous prevu le ".$data['jour']." a ".$data['heure']."a ete annule! <br>";
+
+//echo '<span><a href="annulation.php?mail_etudiant="$mail_e"&mail_prof="$data['mail_prof']"&jour="$data['jour']"&heure="$data['heure']"">Annuler le Rendez-vous</a><span><br>';
+//echo '<span><a href="index_cal.php?mail='.$data['mail'].'">prendre un rdv</a><span><br>';
+
+    echo "</center>";
+
+echo "</table>";
+} 
+}   
+else {
+echo "<br>Database not found";
+}
+//fermer la connexion
+mysqli_close($db_handle);
+?>
+
+
+
+
 <div class="footer">
 
         <div>
@@ -115,28 +155,7 @@ session_start();
 
             </p>
 
-            <form action="modif_client.php" method="post">
 
-           <div id="modif_client" class="admin">
-
-            <input type="text" placeholder="Adresse ligne 1" id="barre_recherche" name="adresse1">
-                    <input type="text" placeholder="Adresse ligne 2" id="barre_recherche" name="adresse2">
-                    <input type="text" placeholder="Ville" id="barre_recherche" name="ville">
-                    <input type="text" placeholder="Code postal" id="barre_recherche" name="code_postal">
-                    <input type="text" placeholder="Pays" id="barre_recherche" name="pays">
-                    <input type="text" placeholder="Numéro de téléphone" id="barre_recherche" name="telephone">
-                    <input type="text" placeholder="Carte étudiante" id="barre_recherche" name="carte_etudiante">
-
-                    <input type="submit" value="Modifier" class="bouton_recherche">
-                </div>
-        </form>
-            <a href="page.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
-            <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
-            <input type="button" value="Coordonnées" class="bouton_accueil" id="coordonnées">
-            <a href="chat.php"><input type="button" value="Communication" class="bouton_accueil" id="communication"></a>
-            <form action="client_infos.php" method="POST">
-                <input type="submit" value="Votre compte" class="bouton_accueil" id="votre_compte">
-            </form>
         </div>
 
 

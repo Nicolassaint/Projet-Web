@@ -56,11 +56,49 @@ if(isset($_POST['submit'])){
         }
     }
 }
-
 $duration = 15;
 $cleanup = 0;
 $start = "09:00";
-$end = "15:00";
+$end = "17:00";
+$jour=$_GET['jour'];
+$mail_p=$_SESSION['adresse_mail'];
+$type=$_SESSION['profession'];
+
+
+        if($jour=="monday" || $jour=="wednesday" || $jour=="friday"){
+            if($type=="enseignant"){
+            $duration = 30;
+            $cleanup = 0;
+            $start = "13:00";
+            $end = "17:00"; 
+            }else{
+            $duration = 30;
+            $cleanup = 0;
+            $start = "10:00";
+            $end = "14:00";
+            }
+        }elseif($jour=="tuesday" || $jour=="thursday"){
+            if($type=="enseignant"){
+            $duration = 30;
+            $cleanup = 0;
+            $start = "08:30";
+            $end = "11:00"; 
+            }else{
+            $duration = 30;
+            $cleanup = 0;
+            $start = "14:00";
+            $end = "17:30";
+            }
+        }else{
+            $duration = 15;
+            $cleanup = 0;
+            $start = "09:00";
+            $end = "17:00";
+        }
+        
+
+
+
 
 function timeslots($duration, $cleanup, $start, $end){
     $start = new DateTime($start);
@@ -143,7 +181,7 @@ function timeslots($duration, $cleanup, $start, $end){
                                 </div>
                                 <div class="form-group">
                                     <label for="">Name</label>
-                                    <input required type="text" class="form-control" name="name">
+                                    <p><?php echo $_SESSION['name'] ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>
