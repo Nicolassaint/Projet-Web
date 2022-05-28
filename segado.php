@@ -83,7 +83,7 @@
     //Si la Base de données existe
     if ($db_found) {
 
-        $sql = "SELECT nom,prenom,departement,salle,tel,mail,nom_image,laboratoire FROM professeur WHERE nom like '%$_GET[nom]%'";
+        $sql = "SELECT nom,prenom,departement,salle,tel,mail,nom_image,laboratoire,profession FROM professeur WHERE nom like '%$_GET[nom]%'";
         $result = mysqli_query($db_handle, $sql);
 
         while ($data = mysqli_fetch_assoc($result)) {
@@ -94,6 +94,7 @@
             echo "Burequ : " . $data['salle'] . '<br>';
             echo "Tel : " . $data['tel'] . '<br>';
             echo "Mail    : " . $data['mail'] . '<br><br>';
+            
             $_SESSION['profession']=$data['profession'];
             $_SESSION['mail']=$data['mail'];
             $image = "";
@@ -105,7 +106,7 @@
                 $row = mysqli_fetch_array($result2);
 
 
-                echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
+                //echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
             }
 
             echo "<b>CV</b><br>";

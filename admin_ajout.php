@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
@@ -17,7 +17,7 @@ $salle = isset($_POST["salle"])? $_POST["salle"] : "";
 $departement = isset($_POST["departement"])? $_POST["departement"] : "";
 $laboratoire = isset($_POST["laboratoire"])? $_POST["laboratoire"] : "";
 
-
+$_SESSION["profession"]=$profession;
 $xml = new XMLWriter();
 //$xml->openUri('cv.xml');
 $xml->openUri("$nom.xml");

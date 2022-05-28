@@ -85,7 +85,7 @@
     //si le BDD existe, faire le traitement
 if ($db_found) {
 
-    $sql = "SELECT nom FROM professeur WHERE departement like '%Informatique%'";
+    $sql = "SELECT nom FROM professeur WHERE departement like '%Informatique%' and profession like '%enseignant%'";
 
     $result = mysqli_query($db_handle, $sql);
 
