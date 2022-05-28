@@ -27,6 +27,22 @@ session_start();
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+        
+
+            $("#modif_client").hide();
+
+            $("#coordonnées").click(function () {
+                $("#modif_client").show();
+            });
+        
+        });
+    </script>
 </head>
 
 <body>
@@ -97,6 +113,21 @@ session_start();
 
             </p>
 
+            <form action="modif_client.php" method="post">
+
+           <div id="modif_client" class="admin">
+
+            <input type="text" placeholder="Adresse ligne 1" id="barre_recherche" name="adresse1">
+                    <input type="text" placeholder="Adresse ligne 2" id="barre_recherche" name="adresse2">
+                    <input type="text" placeholder="Ville" id="barre_recherche" name="ville">
+                    <input type="text" placeholder="Code postal" id="barre_recherche" name="code_postal">
+                    <input type="text" placeholder="Pays" id="barre_recherche" name="pays">
+                    <input type="text" placeholder="Numéro de téléphone" id="barre_recherche" name="telephone">
+                    <input type="text" placeholder="Carte étudiante" id="barre_recherche" name="carte_etudiante">
+
+                    <input type="submit" value="Modifier" class="bouton_recherche">
+                </div>
+        </form>
             <a href="page.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
             <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
             <input type="button" value="Coordonnées" class="bouton_accueil" id="coordonnées">
