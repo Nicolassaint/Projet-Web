@@ -77,6 +77,14 @@
             </div>
     </form>
 
+    <div class="container b">
+        <h2>Disponibilités des chercheurs</h2>
+    </div>
+
+    <div class="container infos">
+        <img src="dispo_chercheurs.png" width="470" height="300">
+    </div>
+
 
     <div class="footer">
 
