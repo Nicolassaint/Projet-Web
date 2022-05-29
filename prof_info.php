@@ -78,7 +78,7 @@
 
     <div class="container infos">
             <img src="info.png" width="250" height="200">
-    </div>;
+    </div>
 
    
     <?php
@@ -89,7 +89,7 @@ if ($db_found) {
 
     $result = mysqli_query($db_handle, $sql);
 
-    echo "<div class =section> <p>Liste des professeurs : </p> <br></div>";
+    echo '<div class="section"> <p>Liste des professeurs : </p> <br>';
         
 
         while ($data = mysqli_fetch_assoc($result)) {
@@ -98,15 +98,16 @@ if ($db_found) {
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
             echo '<span><a href="segado.php?nom='. $data['nom'].'">Afficher plus</a><span><br>';
             echo "<br>";
-            echo'</div>';
+            
             
         }
+
+        echo'</div>';
         
-    
     }
 
     ?>
-
+   
 
     <div class="footer">
 
