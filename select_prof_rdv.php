@@ -63,13 +63,15 @@ session_start();
 
                 </ul>
                 <div id="barre_recherche">
-                    <form role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form role="search" action="recherche.php" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            name="recherche">
 
+                
+                    <button class="btn btn-outline-success" type="submit" formaction="recherche.php">Search</button>
                     </form>
-                    <form>
-                        <button class="btn btn-outline-success" type="submit" formaction = "recherche.php">Search</button>
-                    </form>                </div>
+
+                </div>
 
                 <form action="choix_compte.php" method="post">
                     <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
@@ -91,28 +93,32 @@ session_start();
     
         $result = mysqli_query($db_handle, $sql);
     
-        echo "<div class =section> <p>Liste des professeurs : </p> <br></div>";
-            
+        echo "<div class =section> <h3 style = 'text-align : center';>Prise de RDV : </h3> <br></div>";
+     
+    echo "<div style='text-align : center';>";
     echo '<form action="" method="post">';
     echo '<select name="prof">';
-    echo "<option>-- Select Prof --</option>";
+
+    echo "<option>-- Sélectionner l'enseignant --</option>";
     
             while ($data = mysqli_fetch_assoc($result)) {
             
+                
                 echo '<option value="'.$data['mail'].'">'. $data['nom'] .'</option><br>';
                 
                 
                 
                 echo "<br>";
-                echo'</div>';
+               
                 
             }
             
             //$_SESSION['mail']=$_POST['prof'];
-           echo '</select>';
-           echo '<input type="submit" name="submit" value="Select">';
+           echo '</select><br><br>';
+           echo '<input type="submit" name="submit" value="Sélectionner"class="btn btn-outline-light">';
            
             echo '</form>';
+            echo'</div>';
         }
         
         
@@ -126,7 +132,7 @@ session_start();
         $selected = $_POST['prof'];
         echo 'Vous avez choisi: ' . $selected.'<br>';
         $_SESSION['mail']=$selected;
-        echo '<span><a href="index_cal.php">Prennez RDV</a><span><br>';
+        echo '<span><a href="index_cal.php">Prendre un RDV</a><span><br>';
     } else {
         echo 'Please select the value.';
     }

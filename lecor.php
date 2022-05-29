@@ -48,19 +48,20 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">PRENDRE UN RENDEZ-VOUS
+                        <a class="nav-link active" aria-current="page" href="select_prof_rdv.php">PRENDRE UN RENDEZ-VOUS
                         </a>
                     </li>
 
                 </ul>
                 <div id="barre_recherche">
-                    <form role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form role="search" action="recherche.php" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            name="recherche">
 
+                
+                    <button class="btn btn-outline-success" type="submit" formaction="recherche.php">Search</button>
                     </form>
-                    <form>
-                        <button class="btn btn-outline-success" type="submit" formaction="recherche.php">Search</button>
-                    </form>
+
                 </div>
 
                 <button type="button" class="btn btn-outline-light">SE CONNECTER</button>

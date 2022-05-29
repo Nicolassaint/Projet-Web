@@ -54,19 +54,21 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">PRENDRE UN RENDEZ-VOUS
+                        <a class="nav-link active" aria-current="page" href="select_prof_rdv.php">PRENDRE UN RENDEZ-VOUS
                         </a>
                     </li>
+
                 </ul>
                 <div id="barre_recherche">
-                    <form role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form role="search" action="recherche.php" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            name="recherche">
 
+                
+                    <button class="btn btn-outline-success" type="submit" formaction="recherche.php">Search</button>
                     </form>
-                    <form>
-                        <button class="btn btn-outline-success" type="submit" formaction = "recherche.php">Search</button>
-                    </form>                  </div>
 
+                </div>
                 <form action="choix_compte.php" method="post">
                     <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
                     </form>
@@ -90,11 +92,11 @@ if ($db_found) {
 
         while ($data = mysqli_fetch_assoc($result)) {
             echo '<div class="container infos">';
-            echo "<img src=". $data['image'] ." width='250' height='200'>". '<br>';
+            echo "<img src=". $data['image'] ." width='250' height='200'>";
 
-            echo '<div class = "relations_internationales">';
+           
                        
-            echo "<b>Université : </b><p> " . $data['univ'] ."</p>";
+            echo "<b>Université : </b> " . $data['univ'] ;
             
             echo'</div>';
             
