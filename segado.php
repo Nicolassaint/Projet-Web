@@ -74,9 +74,7 @@
 
     <h2 style="text-align : center;">ENSEIGNANT</h2>
 
-    <div class="container infos">
-        <img src="info.png" width="250" height="200">
-    </div>
+   
 
 
     <div class="section">
@@ -90,6 +88,8 @@
         $result = mysqli_query($db_handle, $sql);
 
         while ($data = mysqli_fetch_assoc($result)) {
+            
+           
             echo "Prénom : " . $data['prenom'] . '<br>';
             echo "Nom : " . $data['nom'] . '<br>';
             echo "Département : " . $data['departement'] . '<br>';
@@ -99,17 +99,10 @@
 
             $_SESSION['profession'] = $data['profession'];
             $_SESSION['mail'] = $data['mail'];
-            $image = "";
-            $image = $data['nom_image'];
+            
+
 
             echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
-            if ($image != "") {
-                $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
-                $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
-                $row = mysqli_fetch_array($result2);
-
-                echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
-            }
 
 
             echo "<b>CV</b><br>";
@@ -122,6 +115,16 @@
 
             if ($chercheur != "") {
                 echo "<br>Publications : " . $xmlElement->publications;
+            }
+
+            $image = "";
+            $image = $data['nom_image'];
+            if ($image != "") {
+                $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
+                $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
+                $row = mysqli_fetch_array($result2);
+
+               echo '<br><img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="14% />';
             }
 
         }
@@ -137,31 +140,7 @@
 
     <div class="footer">
 
-        <div>
-            <p> 37 Quai Grenelle, 75015 Paris </p>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.369423144615!2d2.2842394155508656!3d48.85116550916967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e670049543178d%3A0x400dcd31a8b1ba2a!2s43%20Quai%20de%20Grenelle%2C%2075015%20Paris!5e0!3m2!1sen!2sfr!4v1653224205532!5m2!1sen!2sfr" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
-        </div>
-
-        <div>
-
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contactez-nous !</b><br><br>Mail : <a href="mailto:scolarite@omnes.fr">scolarite@omnes.fr</a><br>
-                Tél : <a href="01 30 62 78 62">01 30 62 78 62</a></p>
-
-        </div>
-
-        <div>
-
-            <p>
-                Site créé par :
-                <li>Lise CHANTHAPHASOUK</li>
-                <li>Louise Poirey </li>
-                <li>Nicolas Saint</li>
-                <li>Roy Sfeir</li>
-                <li>TD06 - ING3</li>
-
-            </p>
-
+       
         </div>
 
 </body>
