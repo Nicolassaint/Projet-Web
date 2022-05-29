@@ -18,7 +18,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 $utilisateur = "";
 $utilisateur = $_SESSION["type_utilisateur"];
 
-echo "type : ".$utilisateur."<br>";
+//echo "type : ".$utilisateur."<br>";
 
  //si le BDD existe, faire le traitement
 if ($db_found) {
@@ -26,10 +26,10 @@ if ($db_found) {
     if ($utilisateur == "client")
     {
       
-        $sql = "INSERT into etudiant values('$nom','$prenom','$login','$password')";
+        $sql = "INSERT into etudiant (nom,prenom,login,mdp) values('$nom','$prenom','$login','$password')";
         $result = mysqli_query($db_handle, $sql);
-        echo "Ajout client reussi, valeurs : ".$nom."  ".$prenom."   ".$login."   ".$password;
-
+        //echo "Ajout client reussi, valeurs : ".$nom."  ".$prenom."   ".$login."   ".$password;
+        echo "Inscription réussie !";
     }
 
 

@@ -78,36 +78,36 @@
 
     <div class="container infos">
             <img src="info.png" width="250" height="200">
-    </div>;
+    </div>
 
    
     <?php
     //si le BDD existe, faire le traitement
 if ($db_found) {
 
-    $sql = "SELECT nom FROM professeur WHERE departement like '%Informatique%'";
+    $sql = "SELECT nom FROM professeur WHERE departement like '%Informatique%' and profession like '%enseignant%'";
 
     $result = mysqli_query($db_handle, $sql);
 
-    echo "<div class =section> <p>Liste des professeurs : </p> <br></div>";
+    echo '<div class="section"> <p>Liste des professeurs : </p> <br>';
         
 
         while ($data = mysqli_fetch_assoc($result)) {
         
                        
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-            echo "<b>Afficher son CV : </b>"; 
-            echo "<br>";
             echo '<span><a href="segado.php?nom='. $data['nom'].'">Afficher plus</a><span><br>';
-            echo'</div>';
+            echo "<br>";
+            
             
         }
+
+        echo'</div>';
         
-    
     }
 
     ?>
-
+   
 
     <div class="footer">
 

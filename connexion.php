@@ -33,12 +33,12 @@ if ($db_found) {
             {
                 $_SESSION["adresse_client"] = $login;
                 $_SESSION["name"] = $data["prenom"]." ".$data["nom"];
+                $_SESSION["connexion_test"] = "correct";
                 header('Location: client.php');
                 exit();
             }
             else{                
-                echo "<script>alert(\"Mot de passe ou login incorrect !\")</script>";
-                sleep(1);
+                $_SESSION["connexion_test"] = "incorrect";
                 header('Location: compte.php');
             }
         }
@@ -58,12 +58,13 @@ if ($db_found) {
             {
                 $_SESSION["adresse_prof"] = $login;
                 $_SESSION["name"] = $data["prenom"]." ".$data["nom"];
+                $_SESSION["connexion_test"] = "correct";
                 header('Location: prof.php');
                 exit();
 
             }
             else{                
-                sleep(1);
+                $_SESSION["connexion_test"] = "incorrect";
                 header('Location: compte.php');           
             }
         }
@@ -82,12 +83,13 @@ if ($db_found) {
             if(($data["login"] == $login) && ($data["mdp"] == $password))
             {
                 $_SESSION["adresse_admin"] = $login;
+                $_SESSION["connexion_test"] = "correct";
                 header('Location: admin.php');
                 exit();
 
             }
             else{                
-                sleep(1);
+                $_SESSION["connexion_test"] = "incorrect";
                 header('Location: compte.php');
                        }
         }
