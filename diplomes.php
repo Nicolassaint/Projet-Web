@@ -74,7 +74,7 @@
         </div>
     </nav>
 
-    <h2 style ="text-align : center;">Double diplomes</h2>
+    <h2 style ="text-align : center;">Doubles diplomes</h2>
 
    
     <?php

@@ -117,7 +117,7 @@
             $filename = "$nom.xml";
             $xmlElement = simplexml_load_file($filename);
             echo "<br>Formations : " . $xmlElement->formations;
-            echo "<br>Expériances : " . $xmlElement->experiances;
+            echo "<br>Expériences : " . $xmlElement->experiances;
 
             if ($chercheur != "") {
                 echo "<br>Publications : " . $xmlElement->publications;

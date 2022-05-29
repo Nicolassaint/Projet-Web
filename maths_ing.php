@@ -76,7 +76,7 @@
 
     <div class="container infos">
             <img src="MPI.png" width="250" height="200">
-    </div>;
+    </div>
 
    
     <?php
@@ -95,7 +95,7 @@
                            
                 echo "<b>Nom : </b> " . $data['nom'] ."<br>";
                 echo "<b>Prenom : </b> " . $data['prenom'] ."<br>";
-                echo "<b>email : </b> " . $data['mail'] ."<br>";
+                echo "<b>Email : </b> " . $data['mail'] ."<br>";
                 //echo "<b> Photo : </b> " . $data['nom_image'] ."<br>";
                 /*if ($image != "") {
                     $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";

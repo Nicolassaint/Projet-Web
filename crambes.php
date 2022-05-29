@@ -71,7 +71,7 @@
     <h2 style="text-align : center;">ENSEIGNANT</h2>
 
     <div class="container infos">
-        <img src="info.png" width="250" height="200">
+        <img src="physique.png" width="250" height="200">
     </div>
 
 
@@ -87,6 +87,7 @@
         $result = mysqli_query($db_handle, $sql);
 
         while ($data = mysqli_fetch_assoc($result)) {
+            echo "<div style='text-align : center';>";
             echo "Prénom : " . $data['prenom'] . '<br>';
             echo "Nom : " . $data['nom'] . '<br>';
             echo "Département : " . $data['departement'] . '<br>';
@@ -100,6 +101,7 @@
             $image = $data['nom_image'];
 
             echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
+            echo "</div>";
             if ($image != "") {
                 $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
                 $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
@@ -115,7 +117,7 @@
             $filename = "$nom.xml";
             $xmlElement = simplexml_load_file($filename);
             echo "<br>Formations : " . $xmlElement->formations;
-            echo "<br>Expériances : " . $xmlElement->experiances;
+            echo "<br>Expériences : " . $xmlElement->experiances;
 
             if ($chercheur != "") {
                 echo "<br>Publications : " . $xmlElement->publications;

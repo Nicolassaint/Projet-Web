@@ -71,7 +71,7 @@
     <h2 style="text-align : center;">ENSEIGNANT</h2>
 
     <div class="container infos">
-        <img src="info.png" width="250" height="200">
+        <img src="maths.png" width="250" height="200">
     </div>
 
 
@@ -115,7 +115,7 @@
             $filename = "$nom.xml";
             $xmlElement = simplexml_load_file($filename);
             echo "<br>Formations : " . $xmlElement->formations;
-            echo "<br>Expériances : " . $xmlElement->experiances;
+            echo "<br>Expériences : " . $xmlElement->experiances;
 
             if ($chercheur != "") {
                 echo "<br>Publications : " . $xmlElement->publications;

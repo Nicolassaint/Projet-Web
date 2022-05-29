@@ -33,36 +33,38 @@
                         <a class="nav-link active" aria-current="page" href="page.html">ACCUEIL
                         </a>
                     </li>
-                    
-                    
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">DOSSIER
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="page.html" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            TOUT PARCOURIR
                         </a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">INFORMATION
-                        </a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="chat.php">COMMUNICATION
-                        </a>
-                        </li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="enseignements.php">L'ENSEIGNEMENT</a></li>
+                            <li><a class="dropdown-item" href="la_recherche.php">LA RECHERCHE</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="relations_inter.php">RELATION INTERNATIONALE</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="client_infos.php">VOTRE COMPTE
+                        <a class="nav-link active" aria-current="page" href="#">PRENDRE UN RENDEZ-VOUS
                         </a>
                     </li>
-
                 </ul>
                 <div id="barre_recherche">
                     <form role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
                     </form>
-                </div>
+                    <form>
+                        <button class="btn btn-outline-success" type="submit" formaction = "recherche.php">Search</button>
+                    </form>                  </div>
 
                 <form action="choix_compte.php" method="post">
                     <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
-                    </form>            </div>
+                    </form>
+            </div>
         </div>
     </nav>
         <div style = "text-align : center">

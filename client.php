@@ -103,13 +103,7 @@ session_start();
 
             </p>
 
-            <a href="page.html"><input type="button" value="Accueil" class="bouton_accueil"></a>
-            <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
-            <a href="modif_client.php"><input type="button" value="Coordonnées" class="bouton_accueil" id="coordonnées"></a>
-            <a href="chat.php"><input type="button" value="Communication" class="bouton_accueil" id="communication"></a>
-            <form action="client_infos.php" method="POST">
-                <input type="submit" value="Votre compte" class="bouton_accueil" id="votre_compte">
-            </form>
+           
         </div>
 
 

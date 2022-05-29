@@ -94,6 +94,8 @@ if ($db_found) {
         while ($data = mysqli_fetch_assoc($result)) {
             
                        
+            echo "<div style='text-align : center';>";
+
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
              
             

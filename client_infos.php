@@ -17,7 +17,6 @@ session_start();
 $db_handle = mysqli_connect('localhost', 'root', '' );
 $db_found = mysqli_select_db($db_handle, $database);
 
-$adresse_admin = $_SESSION["adresse_admin"]
 ?>
 
     <!-- Required meta tags -->
@@ -68,16 +67,9 @@ $adresse_admin = $_SESSION["adresse_admin"]
                     </li>
 
                 </ul>
-                <div id="barre_recherche">
-                    <form role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                
 
-                    </form>
-                </div>
-
-                <form action="choix_compte.php" method="post">
-                    <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
-                    </form>            </div>
+                     </div>
         </div>
     </nav>
         <div style = "text-align : center">

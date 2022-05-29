@@ -73,16 +73,9 @@ session_start();
                     </li>
 
                 </ul>
-                <div id="barre_recherche">
-                    <form role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                
 
-                    </form>
                 </div>
-
-                <form action="choix_compte.php" method="post">
-                    <input type="submit" class="btn btn-outline-light" value="SE CONNECTER">
-                    </form>            </div>
         </div>
     </nav>
         <div style = "text-align : center">
