@@ -81,27 +81,42 @@
    
     <?php
     //si le BDD existe, faire le traitement
-if ($db_found) {
+    if ($db_found) {
 
-    $sql = "SELECT nom FROM professeur WHERE profession like '%chercheur%' and laboratoire like '%Ingenierie%'";
-
-    $result = mysqli_query($db_handle, $sql);
-
-    echo "<div class =section> <p>Liste des professeurs : </p> <br></div>";
-        
-
-        while ($data = mysqli_fetch_assoc($result)) {
-        
-                       
-            echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-            echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
-            echo "<br>";
-            echo'</div>';
-            
-        }
-        
+        $sql = "SELECT * FROM professeur WHERE laboratoire like '%Ingenierie%'";
     
-    }
+        $result = mysqli_query($db_handle, $sql);
+    
+        echo "<div class =section> <p>Liste des professeurs : </p> <br></div>";
+            
+    
+            while ($data = mysqli_fetch_assoc($result)) {
+            
+                           
+                echo "<b>Nom : </b> " . $data['nom'] ."<br>";
+                echo "<b>Prenom : </b> " . $data['prenom'] ."<br>";
+                echo "<b>email : </b> " . $data['mail'] ."<br>";
+                //echo "<b> Photo : </b> " . $data['nom_image'] ."<br>";
+                /*if ($image != "") {
+                    $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
+                    $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
+                    $row = mysqli_fetch_array($result2);
+        
+        
+                   // echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
+                } */
+
+                echo "<b>Salle : </b> " . $data['salle'] ."<br>";
+                echo "<br>";
+                //echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
+                echo'</div>';
+                
+            }
+            
+        
+        }
+
+
 
     ?>
 

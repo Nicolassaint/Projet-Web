@@ -34,7 +34,7 @@ $xml->startElement('experiances');
 $xml->writeCdata("$experiances");
 $xml->endElement();
 
-if($publications != ""){
+if((($publications != "")) && ($profession == "chercheur")){
 $xml->startElement('publications');
 $xml->writeCdata("$publications");
 $xml->endElement();
