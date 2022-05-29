@@ -107,7 +107,7 @@
                 $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));
                 $row = mysqli_fetch_array($result2);
 
-                //echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
+                echo '<img src="data:' . $row["imageType"] . ';base64,' . base64_encode($row["imageData"]) . '"width="7% />';
             }
 
 

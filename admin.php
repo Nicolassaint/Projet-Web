@@ -20,11 +20,14 @@ session_start();
             $("#supression_admin").hide();
             $("#ajout_admin").hide();
             $("#admin_infos_relations").hide();
+            $("#modif_cv").hide();
    
             $("#suppression").click(function () {
                 $("#supression_admin").show();
                 $("#ajout_admin").hide();
                 $("#admin_infos_relations").hide();
+                $("#modif_cv").hide();
+
 
             });
 
@@ -32,6 +35,8 @@ session_start();
                 $("#supression_admin").hide();
                 $("#ajout_admin").show();
                 $("#admin_infos_relations").hide();
+                $("#modif_cv").hide();
+
 
             });
 
@@ -39,6 +44,16 @@ session_start();
                 $("#supression_admin").hide();
                 $("#ajout_admin").hide();
                 $("#admin_infos_relations").show();
+                $("#modif_cv").hide();
+
+            });
+
+            $("#modificationcv").click(function () {
+                $("#supression_admin").hide();
+                $("#ajout_admin").hide();
+                $("#admin_infos_relations").hide();
+                $("#modif_cv").show();
+
             });
 
 
@@ -65,7 +80,7 @@ session_start();
             <a href="index.html"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
             <input type="button" value="Ajout personnel" class="bouton_accueil" id="ajout">
             <input type="button" value="Suppression personnel" class="bouton_accueil" id="suppression">
-            <input type="button" value="Exportation CV" class="bouton_accueil" id="exporationCV">
+            <input type="button" value="Modification CV" class="bouton_accueil" id="modificationcv">
             <input type="button" value="Relations Internationales" class="bouton_accueil" id="infos_inter">
             <input type="button" value="Disponibilités personnel" class="bouton_accueil" id="dispo_personnel">
             <form action="admin_infos.php" method="POST">
@@ -78,9 +93,28 @@ session_start();
             <div id="supression_admin" class="admin">
 
                 <div id="encadrement_recherche">
+
                     <input type="text" placeholder="Email de l'employé" id="barre_recherche" name="mail">
                     <input type="submit" value="Supprimer" class="bouton_recherche">
                     <div id="slider"><img src="loupe.jpg" width="50" height="50" id="loupe"></div>
+
+                </div>
+
+            </div>
+        </form>
+
+
+        <form action="cv_modifications.php" method="post">
+
+            <div id="modif_cv" class="admin">
+
+                <div id="encadrement_recherche">
+
+                    <input type="text" placeholder="Nom de l'employé" id="barre_recherche" name="nom_employe">
+                    <input type="text" placeholder="formations" id="barre_recherche" name="formations">
+                    <input type="text" placeholder="expériances" id="barre_recherche" name="experiances">
+                    <input type="text" placeholder="publications" id="barre_recherche" name="publications">
+                    <input type="submit" value="Modifier" class="bouton_recherche">
 
                 </div>
 
