@@ -101,12 +101,12 @@
             $image = "";
             $image = $data['nom_image'];
 
-            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
+            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '">prendre un rdv</a><span><br>';
             echo "</div>";
            
 
 
-            echo "<b>CV</b><br>";
+            echo "<br><b>CV</b><br>";
             $nom = $data['nom'];
             $chercheur = $data['laboratoire'];
             $filename = "$nom.xml";
@@ -117,6 +117,7 @@
             if ($chercheur != "") {
                 echo "<br>Publications : " . $xmlElement->publications;
             }
+            echo "<br>";
             if ($image != "") {
                 $sql2 = "SELECT imageType,imageData FROM output_images WHERE imageName = '$image' ";
                 $result2 = mysqli_query($db_handle, $sql2) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($db_handle));

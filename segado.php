@@ -90,11 +90,11 @@
         while ($data = mysqli_fetch_assoc($result)) {
             
            
-            echo "Prénom : " . $data['prenom'] . '<br>';
+            echo "<br>Prénom : " . $data['prenom'] . '<br>';
             echo "Nom : " . $data['nom'] . '<br>';
             echo "Département : " . $data['departement'] . '<br>';
-            echo "Burequ : " . $data['salle'] . '<br>';
-            echo "Tel : " . $data['tel'] . '<br>';
+            echo "Bureau : " . $data['salle'] . '<br>';
+            echo "Tél : " . $data['tel'] . '<br>';
             echo "Mail    : " . $data['mail'] . '<br><br>';
 
             $_SESSION['profession'] = $data['profession'];
@@ -102,7 +102,7 @@
             
 
 
-            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '"><br><br>prendre un rdv</a><span><br>';
+            echo '<span><a href="index_cal.php?mail=' . $data['mail'] . '">prendre un rdv</a><span><br><br>';
 
 
             echo "<b>CV</b><br>";
@@ -115,8 +115,10 @@
 
             if ($chercheur != "") {
                 echo "<br>Publications : " . $xmlElement->publications;
+                
             }
 
+            echo "<br>";
             $image = "";
             $image = $data['nom_image'];
             if ($image != "") {
