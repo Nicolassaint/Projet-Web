@@ -96,9 +96,10 @@ if ($db_found) {
             
                        
             echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-            echo "<b>Afficher son CV : </b>"; 
+            
+           
+            echo '<span><a href="lecor.php?nom='. $data['nom'].'">Afficher plus</a><span><br>'; 
             echo "<br>";
-            echo '<span><a href="lecor.php?nom='. $data['nom'].'">Afficher plus</a><span><br>';
             echo'</div>';
             
         }
