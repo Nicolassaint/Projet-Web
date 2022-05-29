@@ -77,12 +77,11 @@ session_start();
 
         <div id="navigation_admin">
 
-            <a href="index.html"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
+            <a href="page.html"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
             <input type="button" value="Ajout personnel" class="bouton_accueil" id="ajout">
             <input type="button" value="Suppression personnel" class="bouton_accueil" id="suppression">
             <input type="button" value="Modification CV" class="bouton_accueil" id="modificationcv">
             <input type="button" value="Relations Internationales" class="bouton_accueil" id="infos_inter">
-            <input type="button" value="Disponibilités personnel" class="bouton_accueil" id="dispo_personnel">
             <form action="admin_infos.php" method="POST">
                 <input type="submit" value="Votre compte" class="bouton_accueil" id="votre_compte">
             </form>
