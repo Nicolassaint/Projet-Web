@@ -85,14 +85,10 @@ session_start();
 <?php
 
     $date = $_SESSION['jour'];
-    echo $date;
     $time=$_SESSION['heure'];
-    echo $time;
     $mail_e=$_SESSION["adresse_client"];
-    echo $mail_e;
     $mail_p=$_SESSION['mail_prof'];
-    echo $mail_p;
-
+    echo " Le rendez-vous prevu le ".$date." a ".$time." avec ".$mail_p." a ete annule !";
 
 //Si la Base de données existe
 if ($db_found) {
@@ -100,7 +96,7 @@ if ($db_found) {
 $sql = "DELETE FROM rdv WHERE mail_etudiant='$mail_e' and mail_prof='$mail_p' and jour='$date' and heure='$time'";
 $result = mysqli_query($db_handle, $sql);
 
-while ($data = mysqli_fetch_assoc($result)) {
+/*while($data = mysqli_fetch_assoc($result)){
     echo "<center>";
 
 echo "Mail    : " . $data['mail_prof'] . '<br>';
@@ -112,7 +108,7 @@ echo "Rendez-vous prevu le ".$data['jour']." a ".$data['heure']."a ete annule! <
     echo "</center>";
 
 echo "</table>";
-} 
+} */
 }   
 else {
 echo "<br>Database not found";

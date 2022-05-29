@@ -61,10 +61,10 @@ $cleanup = 0;
 $start = "09:00";
 $end = "17:00";
 $jour=$_GET['jour'];
-$mail_p=$_SESSION['adresse_mail'];
+//$mail_p=$_SESSION['adresse_mail'];
 $type=$_SESSION['profession'];
 
-
+echo $mail;
         if($jour=="monday" || $jour=="wednesday" || $jour=="friday"){
             if($type=="enseignant"){
             $duration = 30;
