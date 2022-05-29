@@ -90,7 +90,7 @@ if ($db_found) {
 
         while ($data = mysqli_fetch_assoc($result)) {
             echo '<div class="container infos">';
-            echo "<img src='" . $data['univ'] .".jpg' width='250' height='200'>". '<br>';
+            echo "<img src=". $data['image'] ." width='250' height='200'>". '<br>';
 
             echo '<div class = "relations_internationales">';
                        
