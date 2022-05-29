@@ -84,9 +84,12 @@ $adresse_admin = $_SESSION["adresse_admin"]
     <h3> Vos informations </h3>
     
     <?php
+
     if ($db_found) {
       
-      $sql = "SELECT * from admin WHERE login = '$adresse_admin'";
+      $adresse_client = $_SESSION["adresse_client"];
+
+      $sql = "SELECT * from etudiant WHERE login = '$adresse_client'";
       $result = mysqli_query($db_handle, $sql);
 
 
