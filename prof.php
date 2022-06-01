@@ -37,7 +37,7 @@ session_start();
 
         <div id="navigation_admin">
 
-            <a href="index.html"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
+            <a href="page.html"><input type="button" value="Deconnexion" class="bouton_accueil"></a>
             <input type="button" value="Dossier" class="bouton_accueil" id="dossier">
             <a href ="chat.php"><input type="button" value="Communication" class="bouton_accueil" id="communication"></a>
             <form action="prof_informations.php" method="POST">

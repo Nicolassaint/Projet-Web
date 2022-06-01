@@ -95,7 +95,7 @@ session_start();
 
                     <input type="text" placeholder="Email de l'employé" id="barre_recherche" name="mail">
                     <input type="submit" value="Supprimer" class="bouton_recherche">
-                    <div id="slider"><img src="loupe.jpg" width="50" height="50" id="loupe"></div>
+                    
 
                 </div>
 

@@ -20,11 +20,7 @@ if ($db_found) {
         echo "<div style='text-align:center;'>";
         echo "<br><b>Modification réalisée avec succès </b><br><br>";
 
-        echo $sql;
-        echo "<br><br>salle : ".$salle;
-        echo "<br>telephone : ".$telephone;
-        echo "<br>mail : ".$mail;
-        echo "</div>";
+       
 
          
 }

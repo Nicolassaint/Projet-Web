@@ -65,7 +65,7 @@ $jour=$_GET['jour'];
 $type=$_SESSION['profession'];
 
 echo $mail;
-        if($jour=="monday" || $jour=="wednesday" || $jour=="friday"){
+        if($jour=="monday" || $jour=="tuesday" || $jour=="wednesday"){
             if($type=="enseignant"){
             $duration = 30;
             $cleanup = 0;
@@ -77,7 +77,7 @@ echo $mail;
             $start = "8:30";
             $end = "14:00";
             }
-        }elseif($jour=="tuesday" || $jour=="thursday"){
+        }elseif($jour=="thursday" || $jour=="friday"){
             if($type=="enseignant"){
             $duration = 30;
             $cleanup = 0;

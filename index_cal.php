@@ -105,7 +105,11 @@ echo $_SESSION['adresse_mail'];
             $dayname = strtolower(date('l', strtotime($date)));
             $eventNum = 0;
             $today = $date==date('Y-m-d')? "today" : "";
-         if($date<date('Y-m-d')){
+            if($date==date('2022-02-14'))
+            {
+                $calendar.="<td><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'>SAINT VALENTIN</button>";
+            }
+         elseif($date<date('Y-m-d')){
              $calendar.="<td><h4>$currentDay</h4> <button class='btn btn-danger btn-xs'>N/A</button>";
          }elseif($dayname =='saturday' || $dayname=='sunday' ) //Si c'est le week-end
          {

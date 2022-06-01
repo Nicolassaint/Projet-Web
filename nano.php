@@ -97,12 +97,13 @@
             
                            
                 echo "<b>Nom : </b> " . $data['nom'] ."<br>";
-                echo "<b>Prenom : </b> " . $data['prenom'] ."<br>";
-                echo "<b>Email : </b> " . $data['mail'] ."<br>";
+                //echo "<b>Prenom : </b> " . $data['prenom'] ."<br>";
+                //echo "<b>Email : </b> " . $data['mail'] ."<br>";
                 //echo "<b> Photo : </b> " . $data['nom_image'] ."<br>";
-                echo "<b>Salle : </b> " . $data['salle'] ."<br>";
+                //echo "<b>Salle : </b> " . $data['salle'] ."<br>";
+                
+                echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
                 echo "<br>";
-                //echo '<span><a href="segado.php?nom='. $data['nom'].'">details view</a><span><br>';
                 echo'</div>';
                 
             }
